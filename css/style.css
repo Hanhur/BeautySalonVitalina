@@ -1,0 +1,155 @@
+html 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before 
+{
+    box-sizing: inherit;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+button 
+{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+}
+
+ul 
+{
+    list-style: none;
+}
+
+body 
+{
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: var(--WhiteColor);
+}
+@font-face 
+{
+    font-family: "Manrope", sans-serif;
+    src: url('../fonts/manrope.regular.otf') format('otf');
+    src: url('../fonts/manrope.medium.otf') format('otf');
+    src: url('../fonts/manrope.semibold.otf') format('otf');
+    src: url('../fonts/manrope.bold.otf') format('otf');
+}
+@font-face 
+{
+    font-family: "Playfair Display", serif;
+    src: url('../fonts/playfair-display.bold.ttf') format('ttf');
+    src: url('../fonts/playfair-display-semi-bold.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Inter", sans-serif;
+    src: url('../fonts/Inter-Regular.otf') format('otf');
+    src: url('../fonts/Inter-Bold.otf') format('otf');
+}
+@font-face 
+{
+    font-family: "Roboto", sans-serif;
+    src: url('../fonts/Roboto-Regular.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Open Sans", sans-serif;
+    src: url('../fonts/open-sans.regular.ttf') format('ttf');
+}
+:root 
+{
+    --MainColor: #BA7894;
+    --PrimaryColor: #422A3C;
+    --SecondaryColor: #ECBFD3;
+    --DarkColor: #141414;
+    --LightColor:#F7E5C1;
+    --GrayColor: #555555;
+    --WhiteColor: #FFFFFF;
+    --cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.container
+{
+    max-width: 1680px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+/* ================================================= Header ================================================ */
+.inner
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 0;
+}
+.inner-box
+{
+    display: flex;
+    align-items: center;
+    gap: 0 36px;
+}
+.header_list
+{
+    display: flex;
+    gap: 0 46px;
+}
+.header_item
+{
+
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--DarkColor);
+}
+.header_item:hover,
+.header_item:focus
+{
+    color: var(--MainColor);
+}
+.language
+{
+    display: flex;
+    align-items: center;
+}
+.language_link
+{
+    display: flex;
+}
+.language_sapn
+{
+    font-size: 16px;
+    font-weight: 700;
+}
+.registration
+{
+    display: flex;
+    gap: 0 20px;
+}
+.login
+{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: 2px solid var(--DarkColor);
+}
+.signup
+{
+    font-size: 16px;
+    padding: 14px 24px;
+    border-radius: 5px;
+    color: var(--WhiteColor);
+    background-color: var(--DarkColor);
+}
