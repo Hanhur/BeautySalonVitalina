@@ -336,6 +336,7 @@ body
 .making-img
 {
     width: 455px;
+    border-radius: 20px;
 }
 .box-img
 {
@@ -344,4 +345,119 @@ body
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+}
+/* ========================================== Recommended ============================================ */
+.section-recommended
+{
+    margin-bottom: 111px;
+}
+.recommended_text
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--MainColor);
+    text-transform: uppercase;
+    text-align: center;
+}
+.recommended-title
+{
+    text-align: center;
+    margin-bottom: 16px;
+    width: 768px;
+    margin: 0 auto;
+}
+.recommended-text
+{
+    font-size: 20px;
+    color: var(--GrayColor);
+    text-align: center;
+    width: 768px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.block-recommended
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+}
+.block-box
+{
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 24%);
+    width: 384px;
+}
+.block-box_img
+{
+    width: 100%;
+    border-radius: 24px 24px 0 0;
+}
+.block-inner
+{
+    padding: 24px;
+}
+.reviews
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.rating
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 8px;
+}
+.salon-title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--DarkColor);
+    margin-bottom: 10px;
+}
+.review
+{
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: var(--DarkColor);
+}
+.location-link
+{
+    display: flex;
+    gap: 0 10px;
+    margin-bottom: 24px;
+}
+.locacie
+{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--GrayColor);
+    width: 336px;
+    white-space: nowrap;
+}
+.recommended-btn
+{
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--MainColor);
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--MainColor);
+    padding: 16px 122px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.recommended-btn:hover
+{
+    color: var(--WhiteColor);
+    background-color: var(--MainColor);
 }
