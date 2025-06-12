@@ -87,6 +87,13 @@ body
     padding: 0 10px;
     margin: 0 auto;
 }
+.title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--PrimaryColor);
+}
 /* ================================================= Header ================================================ */
 .inner
 {
@@ -295,4 +302,46 @@ body
 {
     font-weight: 700;
     color: var(--PrimaryColor);
+}
+/* ======================================= Beautiful ============================ */
+.section-beautiful
+{
+    background-color: rgba(235, 243, 245, 50%);
+    margin-bottom: 111px;
+    padding: 64px 120px;
+}
+.beautiful-title
+{
+    text-align: center;
+    width: 768px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+.beautiful-text
+{
+    font-size: 20px;
+    text-align: center;
+    color: var(--GrayColor);
+    width: 768px;
+    margin: 0 auto;
+    margin-bottom: 23px;
+}
+.beautiful-images
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+}
+.making-img
+{
+    width: 455px;
+}
+.box-img
+{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
