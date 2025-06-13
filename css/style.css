@@ -337,7 +337,7 @@ body
 .making-img
 {
     width: 455px;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 .box-img
 {
@@ -461,6 +461,55 @@ body
 {
     color: var(--WhiteColor);
     background-color: var(--MainColor);
+}
+/* =================================== Elegance ======================================= */
+.section-elegance
+{
+    margin-bottom: 150px;
+}
+.elegance-title
+{
+    text-align: center;
+    width: 667px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.elegance-text
+{
+    text-align: center;
+    color: var(--GrayColor);
+    width: 827px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.elegance-block
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+    position: relative;
+}
+.elegance-img
+{
+    border-radius: 15px;
+}
+.elegance
+{
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+    padding: 24px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+.elegance_text
+{
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--WhiteColor);
 }
 /* ==================================== Subscribe ===================================== */
 .section-newsletter
