@@ -121,3 +121,98 @@
     color: var(--WhiteColor);
     width: 508px;
 }
+/* =============================================== Start ===================================== */
+.section-start
+{
+    margin-bottom: 102px;
+}
+.start-inner
+{
+    display: flex;
+    justify-content: space-between;
+}
+.start-block
+{
+    display: flex;
+    flex-direction: column;
+    padding: 52px 113px 54px 113px;
+}
+.start_text
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--MainColor);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.start-title
+{
+    width: 510px;
+    margin-bottom: 12px;
+}
+.start-text
+{
+    line-height: 1.5;
+    width: 747px;
+    color: var(--GrayColor);
+    margin-bottom: 33px;
+}
+.start-box
+{
+    display: flex;
+    flex-direction: column;
+}
+.methodology-title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--DarkColor);
+    width: 435px;
+    margin-bottom: 20px;
+}
+.assessment-img
+{
+    padding-bottom: 60px;
+}
+.stage
+{
+    display: flex;
+    gap: 0 30px;
+    margin-bottom: 20px;
+}
+.assessment-title
+{
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--DarkColor);
+    width: 211px;
+    margin-bottom: 5px;
+}
+.assessment-text
+{
+    line-height: 1.5;
+    color: var(--GrayColor);
+    width: 448px;
+}
+.start_box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.start-img
+{
+    width: 100%;
+    border-radius: 20px;
+}
+.start-play
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
