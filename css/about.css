@@ -216,3 +216,40 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+/* ========================================== Styles ==================================== */
+.section-styles
+{
+    margin-bottom: 102px;
+    padding: 60px 0;
+}
+.styles-block
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 72px;
+}
+.styles-img
+{
+    border-radius: 20px;
+}
+.styles-title
+{
+    width: 520px;
+    margin-bottom: 40px;
+}
+.styles-text
+{
+    width: 555px;
+    color: var(--GrayColor);
+    margin-bottom: 40px;
+}
+.styles-btn
+{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.0;
+    color: var(--WhiteColor);
+    background-color: var(--MainColor);
+    padding: 23px 36px;
+}
