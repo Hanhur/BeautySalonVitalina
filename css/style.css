@@ -47,6 +47,7 @@ body
     src: url('../fonts/manrope.medium.otf') format('otf');
     src: url('../fonts/manrope.semibold.otf') format('otf');
     src: url('../fonts/manrope.bold.otf') format('otf');
+    src: url('../fonts/manrope.extrabold.otf') format('otf');
 }
 @font-face 
 {
