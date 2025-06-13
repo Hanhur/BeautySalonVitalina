@@ -79,3 +79,45 @@
     color: var(--WhiteColor);
     background-color: var(--MainColor);
 }
+/* ============================================= Consumers ===================================== */
+.section-consumers
+{
+    background-color: var(--LightColor);
+    margin-bottom: 176px;
+    padding: 103px 0;
+}
+.comsumers-block
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--PrimaryColor);
+    gap: 0 72px;
+    width: 1200px;
+    height: 530px;
+    margin: 0 auto;
+}
+
+.consumers_text
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--WhiteColor);
+    width: 85px;
+    margin-bottom: 9px;
+}
+.consumers-title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--WhiteColor);
+    width: 460px;
+    margin-bottom: 14px;
+}
+.consumers-text
+{
+    line-height: 1.5;
+    color: var(--WhiteColor);
+    width: 508px;
+}
