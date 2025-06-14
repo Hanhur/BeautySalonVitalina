@@ -1,0 +1,155 @@
+@font-face 
+{
+    font-family: "Playfair Display", serif;
+    src: url('../fonts/playfair-display.bold.ttf') format('ttf');
+    src: url('../fonts/playfair-display-semi-bold.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Inter", sans-serif;
+    src: url('../fonts/Inter-Regular.otf') format('otf');
+    src: url('../fonts/Inter-Bold.otf') format('otf');
+}
+@font-face 
+{
+    font-family: "Roboto", sans-serif;
+    src: url('../fonts/Roboto-Regular.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Open Sans", sans-serif;
+    src: url('../fonts/open-sans.regular.ttf') format('ttf');
+}
+
+:root 
+{
+    --MainColor: #BA7894;
+    --PrimaryColor: #422A3C;
+    --SecondaryColor: #ECBFD3;
+    --DarkColor: #141414;
+    --LightColor:#F7E5C1;
+    --GrayColor: #555555;
+    --WhiteColor: #FFFFFF;
+    --FooterColor: #241520;
+    --priceColor: #6B0606;
+    --cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ============================================ Services ============================================ */
+.section-services
+{
+    background-image: linear-gradient(rgba(66, 42, 60, 0.6)), url(../images/services-gb.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 520px;
+    padding: 166px 0;
+    margin-bottom: 60px;
+}
+.services-title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    width: 667px;
+    color: var(--LightColor);
+    margin: 0 auto 32px;
+}
+.services-text
+{
+    color: var(--SecondaryColor);
+    width: 736px;
+    text-align: center;
+    margin: 0 auto;
+}
+/* ============================================= Prices ================================== */
+
+.section-prices
+{
+    margin-bottom: 120px;
+}
+.prices-title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    width: 667px;
+    margin: 0 auto 24px;
+}
+.prices-text
+{
+    width: 736px;
+    text-align: center;
+    margin: 0 auto 40px;
+    color: var(--GrayColor);
+}
+.prices-block_1,
+.prices-block_2,
+.prices-block_3,
+.prices-block_4,
+.prices-block_5
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 110px;
+    padding: 20px 72px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.prices-box
+{
+    padding: 98px 0;
+}
+.prices_title
+{
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--PrimaryColor);
+    margin-bottom: 20px;
+}
+.prices_text
+{
+    color: var(--GrayColor);
+    margin-bottom: 28px;
+    width: 526px;
+}
+.prices_list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+    margin-bottom: 28px;
+}
+.prices_item
+{
+    display: flex;
+    justify-content: space-between;
+}
+.prices_item span
+{
+    color: var(--DarkColor);
+}
+.prices_span
+{
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+}
+.prices_from
+{
+    font-size: 12px;
+    color: var(--GrayColor);
+}
+.span_prices
+{
+    color: var(--priceColor)
+}
+.prices_link
+{
+    color: var(--priceColor);
+    text-decoration: underline;
+}
