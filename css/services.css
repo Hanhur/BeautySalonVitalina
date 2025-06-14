@@ -153,3 +153,116 @@
     color: var(--priceColor);
     text-decoration: underline;
 }
+/* ======================================== Book ================================== */
+.section-book
+{
+    background-color: var(--LightColor);
+    margin-bottom: 60px;
+    padding: 60px 0;
+}
+.book-inner
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--WhiteColor);
+    padding: 60px;
+    width: 1076px;
+    height: 657px;
+    margin: 0 auto;
+    gap: 0 40px;
+}
+.book_text
+{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--MainColor);
+    text-transform: uppercase;
+    width: 123px;
+    margin-bottom: 24px;
+}
+.book-title
+{
+    margin-bottom: 24px;
+}
+.book-text
+{
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--GrayColor);
+    margin-bottom: 24px;
+}
+.book-list
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; 
+    margin-bottom: 20px;
+}
+.book-item
+{
+    display: flex;
+    flex-direction: column;
+}
+.book-label
+{
+    font-size: 16px;
+    color: var(--DarkColor);
+    margin-bottom: 6px;
+}
+.book-input
+{
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 9px 16px;
+    width: 280px;
+    height: 40px;
+}
+.book-input::placeholder
+{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+}
+.book_item
+{
+    display: flex;
+    flex-direction: column;
+}
+.book_box
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+.book_label
+{
+    font-size: 16px;
+    color: var(--DarkColor);
+    margin-bottom: 6px;
+}
+.book_input
+{
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 9px 40px 9px 16px;
+    width: 600px;
+    height: 40px;
+}
+.book-input_img
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    padding: 0px 16px 0px 8px;
+}
+.book-btn
+{
+    font-size: 24px;
+    line-height: 1.0;
+    padding: 9px 16px;
+    color: var(--WhiteColor);
+    background-color: var(--priceColor);
+}
