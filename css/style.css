@@ -384,6 +384,7 @@ body
     align-items: center;
     justify-content: center;
     gap: 0 24px;
+    flex-wrap: wrap;
 }
 .block-box
 {
@@ -490,6 +491,7 @@ body
     align-items: center;
     justify-content: center;
     gap: 0 24px;
+    flex-wrap: wrap;
     position: relative;
 }
 .elegance-img

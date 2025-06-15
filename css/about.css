@@ -86,7 +86,7 @@
     margin-bottom: 176px;
     padding: 103px 0;
 }
-.comsumers-block
+.consumers-block
 {
     display: flex;
     align-items: center;
@@ -228,6 +228,7 @@
     align-items: center;
     justify-content: center;
     gap: 0 72px;
+    flex-wrap: wrap;
 }
 .styles-img
 {
@@ -257,7 +258,7 @@
     background-color: var(--MainColor);
     padding: 23px 36px;
 }
-/* ========================================== Team ================================ */
+/* ========================================== Our Team ================================ */
 .section-team
 {
     padding: 60px 72px;
@@ -284,6 +285,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    flex-wrap: wrap;
 }
 .team-list
 {
