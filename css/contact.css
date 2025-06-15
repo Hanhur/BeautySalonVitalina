@@ -1,0 +1,115 @@
+@font-face 
+{
+    font-family: "Playfair Display", serif;
+    src: url('../fonts/playfair-display.bold.ttf') format('ttf');
+    src: url('../fonts/playfair-display-semi-bold.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Inter", sans-serif;
+    src: url('../fonts/Inter-Regular.otf') format('otf');
+    src: url('../fonts/Inter-Bold.otf') format('otf');
+}
+@font-face 
+{
+    font-family: "Roboto", sans-serif;
+    src: url('../fonts/Roboto-Regular.ttf') format('ttf');
+}
+@font-face 
+{
+    font-family: "Open Sans", sans-serif;
+    src: url('../fonts/open-sans.regular.ttf') format('ttf');
+}
+
+:root 
+{
+    --MainColor: #BA7894;
+    --PrimaryColor: #422A3C;
+    --SecondaryColor: #ECBFD3;
+    --DarkColor: #141414;
+    --LightColor:#F7E5C1;
+    --GrayColor: #555555;
+    --WhiteColor: #FFFFFF;
+    --FooterColor: #241520;
+    --priceColor: #6B0606;
+    --cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ================================================== Contact ==================================================== */
+.section-contact
+{
+    margin-bottom: 118px;
+}
+.contact-map
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-block
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 170px;
+    gap: 0 120px;
+}
+.contact_img
+{
+    position: relative;
+}
+.contact-background
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 100px;
+}
+.contact-box
+{
+    padding: 23px 0;
+}
+.contact_text
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--PrimaryColor);
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+.contact-title
+{
+    width: 435px;
+    margin-bottom: 23px;
+}
+.contact-text
+{
+    line-height: 1.5;
+    width: 534px;
+    margin-bottom: 43px;
+}
+.contact-list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0;
+}
+.contact-link
+{
+    display: flex;
+    align-items: center;
+    gap: 0 27px;
+}
+.contact__text
+{
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    columns: var(--DarkColor);
+    margin-bottom: 8px;
+}
+.contact_address
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--DarkColor);
+}
