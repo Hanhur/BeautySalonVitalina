@@ -90,6 +90,8 @@ body {
     align-items: center;
     padding: 25px 0;
     flex-wrap: wrap;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .inner-box {
     display: flex;
@@ -387,13 +389,14 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: var(--MainColor);
-    display: block;
+    /* display: block; */
     border-radius: 8px;
     border: 1px solid var(--MainColor);
-    padding: 16px 122px;
+    padding: 16px 50px;
     margin: 0 auto;
     text-transform: uppercase;
     white-space: nowrap;
+    width: 100%;
 }
 .recommended-btn:hover {
     color: var(--WhiteColor);
@@ -473,7 +476,7 @@ body {
     border-radius: 40px;
     width: 543px;
     height: 68px;
-    padding: 9px 11px 9px 28px;
+    padding: 9px 28px;
 }
 .newsletter-img {
     gap: 0 7px;
@@ -490,9 +493,7 @@ body {
     color: #004761;
 }
 .newsletter-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 15px 34px;
+    padding: 15px 20px;
     border-radius: 40px;
     color: var(--WhiteColor);
     background-color: var(--DarkColor);
