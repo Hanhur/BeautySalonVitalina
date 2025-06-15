@@ -577,6 +577,37 @@ body
     color: var(--WhiteColor);
     background-color: var(--DarkColor);
 }
+/* ========================================= Follow our Instagram ============================== */
+.section-follow
+{
+    margin-bottom: 50px;
+}
+.follow-title
+{
+    width: 667px;
+    text-align: center;
+    margin: 0 auto 24px;
+}
+.follow-text
+{
+    width: 827px;
+    color: var(--GrayColor);
+    text-align: center;
+    margin: 0 auto 40px;
+}
+.follow-list
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.follow-link
+{
+    display: flex;
+}
+.follow-img
+{
+    width: 100%;
+}
 /* ==================================== Footer ========================= */
 .footer
 {
