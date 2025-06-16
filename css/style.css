@@ -96,12 +96,18 @@ body {
 .inner-box {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0 36px;
     flex-wrap: wrap;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header_list {
     display: flex;
+    justify-content: space-between;
     gap: 0 46px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header_item {
     font-size: 16px;
@@ -125,21 +131,28 @@ body {
 }
 .registration {
     display: flex;
+    justify-content: space-between;
     gap: 0 20px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .login {
     font-size: 16px;
     font-weight: 700;
-    padding: 14px 24px;
+    padding: 10px;
     border-radius: 5px;
     border: 2px solid var(--DarkColor);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .signup {
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 10px;
     border-radius: 5px;
     color: var(--WhiteColor);
     background-color: var(--DarkColor);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ======================================= Main ====================================== */
 .section-service {
@@ -575,39 +588,23 @@ body {
     gap: 0 14px;
 }
 /* ================================================================================= */
-/* Language Switcher Styles */
-.language {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
+/* Плавные переходы при смене языка */
+body.language-changing {
+    opacity: 0;
+    transition: opacity 0.7s var(--cubic);
 }
 
-.language-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
+/* Стили для селектора языка */
+.language select {
+    padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 100;
-    min-width: 60px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.7s var(--cubic);
 }
 
-.language-dropdown a {
-    display: block;
-    padding: 8px 12px;
-    color: #333;
-    text-decoration: none;
-}
-
-.language-dropdown a:hover {
-    background-color: #f5f5f5;
-}
-
-.language-option {
-    text-transform: uppercase;
+.language select:focus {
+    outline: none;
+    border-color: #aaa;
 }

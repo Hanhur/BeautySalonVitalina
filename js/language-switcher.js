@@ -1,3 +1,149 @@
+
+// // import { translations } from "./translations.js";
+
+// // // Функция для плавного изменения языка
+// // async function changeLanguage(lang) {
+// //     // Добавляем класс для плавного исчезновения
+// //     document.body.classList.add('language-changing');
+
+// //     // Ждем завершения анимации
+// //     await new Promise(resolve => setTimeout(resolve, 300));
+
+// //     // Обновляем контент
+// //     updateContent(lang);
+
+// //     // Удаляем класс для появления нового контента
+// //     document.body.classList.remove('language-changing');
+
+// //     // Сохраняем выбранный язык
+// //     localStorage.setItem('selectedLanguage', lang);
+// // }
+
+// // // Функция обновления контента
+// // function updateContent(lang) {
+// //     // Обновляем тексты с атрибутом data-i18n
+// //     document.querySelectorAll('[data]').forEach(el => {
+// //         const key = el.getAttribute('data');
+// //         if (translations[lang] && translations[lang][key]) {
+// //             el.textContent = translations[lang][key];
+// //         }
+// //     });
+
+// //     // Обновляем выбранный язык в селекторе
+// //     const select = document.getElementById('language-select');
+// //     if (select) select.value = lang;
+// // }
+
+// // // Инициализация при загрузке страницы
+// // document.addEventListener('DOMContentLoaded', () => {
+// //     // Устанавливаем обработчик для селектора языка
+// //     const languageSelect = document.getElementById('language-select');
+// //     if (languageSelect) {
+// //         languageSelect.addEventListener('change', (e) => {
+// //             changeLanguage(e.target.value);
+// //         });
+// //     }
+
+// //     // Восстанавливаем сохраненный язык или используем язык по умолчанию
+// //     const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+// //     changeLanguage(savedLang);
+// // });
+
+// const translations = {
+//     en: {
+//         home: "Home",
+//         about: "About Us",
+//         services: "Services",
+//         contact: "Contact Us",
+//         login: "Login",
+//         signup: "Signup",
+//         serviceNameLabel: "Service Name",
+//         addressLabel: "Address",
+//         search: "Search",
+//         subscribeTitle: "Subscribe to newsletter",
+//         subscribeText: "Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.",
+//         newsletterPlaceholder: "Enter your mail",
+//         newsletterButton: "Subscribe",
+//         bookNow: "BOOK NOW",
+//         followTitle: "Follow our Instagram",
+//     },
+//     ua: {
+//         home: "Головна",
+//         about: "Про нас",
+//         services: "Послуги",
+//         contact: "Контакти",
+//         login: "Увійти",
+//         signup: "Реєстрація",
+//         serviceNameLabel: "Назва послуги",
+//         addressLabel: "Адреса",
+//         search: "Пошук",
+//         subscribeTitle: "Підписка на розсилку",
+//         subscribeText: "Підпишіться, щоб бути в курсі акцій, знижок та оновлень.",
+//         newsletterPlaceholder: "Введіть електронну пошту",
+//         newsletterButton: "Підписатися",
+//         bookNow: "ЗАПИСАТИСЯ",
+//         followTitle: "Наш Instagram",
+//     },
+//     cz: {
+//         home: "Domů",
+//         about: "O nás",
+//         services: "Služby",
+//         contact: "Kontakt",
+//         login: "Přihlásit se",
+//         signup: "Registrovat se",
+//         serviceNameLabel: "Název služby",
+//         addressLabel: "Adresa",
+//         search: "Hledat",
+//         subscribeTitle: "Přihlásit se k odběru",
+//         subscribeText: "Přihlaste se a získejte informace o akcích, slevách a novinkách.",
+//         newsletterPlaceholder: "Zadejte e-mail",
+//         newsletterButton: "Odebírat",
+//         bookNow: "REZERVOVAT",
+//         followTitle: "Sledujte nás na Instagramu",
+//     },
+// };
+
+// function translatePage(lang) {
+//     const t = translations[lang];
+
+//     document.querySelectorAll("[data]").forEach(el => {
+//         const key = el.getAttribute("data");
+//         if (t[key]) el.textContent = t[key];
+//     });
+
+//     const serviceInput = document.querySelector(".name-input");
+//     const addressInput = document.querySelector(".address-input");
+//     const newsletterInput = document.querySelector(".newsletter-input");
+//     const newsletterBtn = document.querySelector(".newsletter-btn");
+
+//     if (serviceInput) serviceInput.placeholder = t.serviceNameLabel;
+//     if (addressInput) addressInput.placeholder = t.addressLabel;
+//     if (newsletterInput) newsletterInput.placeholder = t.newsletterPlaceholder;
+//     if (newsletterBtn) newsletterBtn.textContent = t.newsletterButton;
+
+//     const newsletterTitle = document.querySelector(".newsletter-title");
+//     const newsletterText = document.querySelector(".newsletter-text");
+//     if (newsletterTitle) newsletterTitle.textContent = t.subscribeTitle;
+//     if (newsletterText) newsletterText.textContent = t.subscribeText;
+
+//     const bookNowButtons = document.querySelectorAll(".recommended-btn");
+//     bookNowButtons.forEach(btn => btn.textContent = t.bookNow);
+
+//     const followTitle = document.querySelector(".follow-title");
+//     if (followTitle) followTitle.textContent = t.followTitle;
+// }
+
+// // Слушаем изменение языка из селекта
+// document.addEventListener("DOMContentLoaded", () => {
+//     const langSelect = document.getElementById("language-select");
+//     translatePage(langSelect.value); // Начальный перевод
+
+//     langSelect.addEventListener("change", () => {
+//         const selectedLang = langSelect.value;
+//         translatePage(selectedLang);
+//     });
+// });
+
 // language-switcher.js
 
 const translations = {
