@@ -166,7 +166,7 @@ body {
 .block-sevrice {
     display: flex;
     flex-direction: column;
-    padding: 207px 730px 203px 110px;
+    padding: 207px 300px 203px 110px;
 }
 .service-box {
     display: flex;
@@ -180,6 +180,7 @@ body {
     color: var(--WhiteColor);
     text-transform: uppercase;
     width: 338px;
+    white-space: nowrap;
 }
 .block-title {
     font-family: "Playfair Display", serif;
@@ -609,6 +610,53 @@ body.language-changing {
     border-color: #aaa;
 }
 /* ======================================= Media ======================================= */
+@media (max-width: 1440px)
+{
+    .section-service 
+    {
+        background-image: url(../images/gradient-1.png), url(../images/service-bg.png);
+    }
+    .block-sevrice
+    {
+        padding: 365px 300px 203px 110px;
+    }
+    .block-title
+    {
+        font-size: 55px;
+        width: 410px;
+    }
+    .block-text
+    {
+        margin-bottom: 30px;
+    }
+    .block-form
+    {
+        width: 750px;
+        gap: 0 35px;
+    }
+    .search-link
+    {
+        padding: 16px 20px;
+    }
+}
+@media (max-width: 1300px)
+{
+    .section-service 
+    {
+        background-image: url(../images/gradient-2.png), url(../images/service-bg.png);
+    }
+}
+@media (max-width: 1200px)
+{
+    .section-service 
+    {
+        background-image: url(../images/gradient-3.png), url(../images/service-bg.png);
+    }
+    .block-sevrice
+    {
+        padding: 400px 300px 203px 75px;
+    }
+}
 @media (max-width: 1000px)
 {
     .inner
