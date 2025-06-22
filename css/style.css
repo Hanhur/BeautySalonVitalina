@@ -93,6 +93,37 @@ body {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.header-logo,
+.footer-logo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 30px;
+}
+.logo-img
+{
+    width: 80px;
+}
+.header-logo_text
+{
+    font-size: 32px;
+    color: var(--PrimaryColor);
+}
+.footer-logo_text
+{
+    font-size: 32px;
+    color: var(--MainColor);
+}
+.header-logo_text span
+{
+    font-weight: 800;
+}
+.footer-logo_text span
+{
+    font-weight: 800;
+
+}
 .inner-box {
     display: flex;
     align-items: center;
