@@ -314,7 +314,7 @@ body {
 .section-beautiful {
     background-color: rgba(235, 243, 245, 50%);
     margin-bottom: 111px;
-    padding: 64px 120px;
+    padding: 64px 0;
 }
 .beautiful-title {
     text-align: center;
@@ -329,6 +329,7 @@ body {
     width: 768px;
     margin: 0 auto;
     margin-bottom: 23px;
+    width: 100%;
 }
 .beautiful-images {
     display: flex;
@@ -336,11 +337,15 @@ body {
     justify-content: center;
     gap: 0 24px;
 }
-.making-img {
-    width: 455px;
+.making_img {
+    width: 100%;
     border-radius: 15px;
 }
-.box-img {
+.making-img {
+    width: 100%;
+    border-radius: 15px;
+}
+.box_img {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -730,6 +735,14 @@ body.language-changing {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
+    .title 
+    {
+        font-size: 35px;
+    }
+    .beautiful-title
+    {
+        width: 585px;
+    }
 }
 @media (max-width: 740px)
 {
@@ -767,6 +780,24 @@ body.language-changing {
         font-size: 35px;
         width: 210px;
     }
+    .title 
+    {
+        font-size: 32px;
+    }
+    .beautiful-title
+    {
+        width: 500px;
+    }
+    .beautiful-images
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    .box_img
+    {
+        gap: 20px;
+    }
 }
 @media (max-width: 580px)
 {
@@ -778,6 +809,27 @@ body.language-changing {
     {
         width: 275px;
         border-radius: 33px;
+    }
+    .title 
+    {
+        font-size: 30px;
+    }
+    .beautiful-title
+    {
+        width: 400px;
+    }
+    .beautiful-text
+    {
+        font-size: 18px;
+    }
+
+    .beautiful-images
+    {
+        gap: 20px 0;
+    }
+    .box_img
+    {
+        gap: 15px;
     }
 }
 @media (max-width: 480px)
@@ -799,6 +851,20 @@ body.language-changing {
     {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .title 
+    {
+        font-size: 25px;
+    }
+    .beautiful-text
+    {
+        font-size: 16px;
+    }
+    .box_img
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 }
 @media (max-width: 410px)
@@ -830,6 +896,18 @@ body.language-changing {
     .block-sevrice
     {
         padding: 200px 15px 25px 15px;
+    }
+    .title 
+    {
+        font-size: 20px;
+    }
+    .beautiful-title
+    {
+        width: 300px;
+    }
+    .beautiful-text
+    {
+        font-size: 14px;
     }
 }
 @media (max-width: 320px)
