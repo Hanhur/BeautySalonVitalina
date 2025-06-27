@@ -477,20 +477,23 @@ body {
 .elegance-block {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0 24px;
+    justify-content: space-around;
+    gap: 30px;
     flex-wrap: wrap;
+}
+.elegance-box
+{
     position: relative;
 }
 .elegance-img {
     border-radius: 15px;
+    width: 100%;
 }
 .elegance {
     display: flex;
     align-items: center;
     gap: 0 24px;
     padding: 24px;
-    content: "";
     position: absolute;
     bottom: 0;
 }
@@ -743,9 +746,14 @@ body.language-changing {
     {
         font-size: 35px;
     }
-    .beautiful-title
+    .beautiful-title,
+    .elegance-title
     {
         width: 585px;
+    }
+    .elegance-text
+    {
+        width: 100%;
     }
 }
 @media (max-width: 740px)
@@ -788,7 +796,8 @@ body.language-changing {
     {
         font-size: 32px;
     }
-    .beautiful-title
+    .beautiful-title,
+    .elegance-title
     {
         width: 500px;
     }
@@ -818,15 +827,17 @@ body.language-changing {
     {
         font-size: 30px;
     }
-    .beautiful-title
+    .beautiful-title,
+    .elegance-title
     {
         width: 400px;
     }
-    .beautiful-text
+    .beautiful-text,
+    .recommended-text,
+    .elegance-text
     {
-        font-size: 18px;
+        font-size: 16px;
     }
-
     .beautiful-images
     {
         gap: 20px 0;
@@ -837,7 +848,6 @@ body.language-changing {
     }
     .recommended-text
     {
-        font-size: 18px;
         margin-bottom: 50px;
     }
 }
@@ -865,20 +875,13 @@ body.language-changing {
     {
         font-size: 25px;
     }
-    .beautiful-text
-    {
-        font-size: 16px;
-    }
     .box_img
     {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
-    .recommended-text
-    {
-        font-size: 16px;
-    }
+
 }
 @media (max-width: 410px)
 {
@@ -914,11 +917,13 @@ body.language-changing {
     {
         font-size: 20px;
     }
-    .beautiful-title
+    .beautiful-title,
+    .elegance-title
     {
         width: 300px;
     }
-    .beautiful-text
+    .beautiful-text,
+    .elegance-text
     {
         font-size: 14px;
     }
