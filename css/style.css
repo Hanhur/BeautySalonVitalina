@@ -313,7 +313,6 @@ body {
 /* ======================================= Beautiful ============================ */
 .section-beautiful {
     background-color: rgba(235, 243, 245, 50%);
-    margin-bottom: 111px;
     padding: 64px 0;
 }
 .beautiful-title {
@@ -354,7 +353,7 @@ body {
 }
 /* ========================================== Recommended ============================================ */
 .section-recommended {
-    margin-bottom: 111px;
+    margin-bottom: 100px;
 }
 .recommended_text {
     font-size: 15px;
@@ -362,12 +361,15 @@ body {
     color: var(--MainColor);
     text-transform: uppercase;
     text-align: center;
+    margin: 0 auto;
+    width: 100%;
 }
 .recommended-title {
     text-align: center;
     margin-bottom: 16px;
     width: 768px;
-    margin: 0 auto;
+    margin: 0 auto 8px;
+    width: 100%;
 }
 .recommended-text {
     font-size: 20px;
@@ -376,12 +378,13 @@ body {
     width: 768px;
     margin: 0 auto;
     margin-bottom: 70px;
+    width: 100%;
 }
 .block-recommended {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 24px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 .block-box {
@@ -432,8 +435,9 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: var(--GrayColor);
-    width: 336px;
-    white-space: nowrap;
+    width: 100%;
+    /* width: 336px;
+    white-space: nowrap; */
 }
 .recommended-btn {
     font-family: "Playfair Display", serif;
@@ -831,6 +835,11 @@ body.language-changing {
     {
         gap: 15px;
     }
+    .recommended-text
+    {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
 }
 @media (max-width: 480px)
 {
@@ -865,6 +874,10 @@ body.language-changing {
         display: flex;
         flex-direction: column;
         gap: 15px;
+    }
+    .recommended-text
+    {
+        font-size: 16px;
     }
 }
 @media (max-width: 410px)
@@ -908,6 +921,14 @@ body.language-changing {
     .beautiful-text
     {
         font-size: 14px;
+    }
+    .block-box
+    {
+        width: 100%;
+    }
+    .salon-title
+    {
+        font-size: 20px;
     }
 }
 @media (max-width: 320px)
