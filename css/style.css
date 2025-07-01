@@ -763,7 +763,8 @@ body.language-changing {
     {
         width: 585px;
     }
-    .elegance-text
+    .elegance-text,
+    .follow-text
     {
         width: 100%;
     }
@@ -809,7 +810,8 @@ body.language-changing {
         font-size: 32px;
     }
     .beautiful-title,
-    .elegance-title
+    .elegance-title,
+    .follow-title
     {
         width: 500px;
     }
@@ -840,7 +842,8 @@ body.language-changing {
         font-size: 30px;
     }
     .beautiful-title,
-    .elegance-title
+    .elegance-title,
+    .follow-title
     {
         width: 400px;
     }
@@ -853,7 +856,8 @@ body.language-changing {
     .beautiful-text,
     .recommended-text,
     .elegance-text,
-    .newsletter-text
+    .newsletter-text,
+    .follow-text
     {
         font-size: 16px;
     }
@@ -925,6 +929,7 @@ body.language-changing {
         align-items: center;
         flex-direction: column;
         gap: 35px 0;
+        width: 285px;
     }
     .newsletter-form_box
     {
@@ -966,13 +971,15 @@ body.language-changing {
         font-size: 20px;
     }
     .beautiful-title,
-    .elegance-title
+    .elegance-title,
+    .follow-title
     {
         width: 300px;
     }
     .beautiful-text,
     .elegance-text,
-    .newsletter-text
+    .newsletter-text,
+    .follow-text
     {
         font-size: 14px;
     }
