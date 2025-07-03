@@ -689,6 +689,19 @@ body.language-changing {
     {
         padding: 16px 20px;
     }
+    .start-title
+    {
+        font-size: 35px;
+    }
+    .start-text,
+    .assessment-text
+    {
+        font-size: 16px;
+    }
+    .start-img
+    {
+        width: 600px;
+    }
 }
 @media (max-width: 1300px)
 {
@@ -697,6 +710,22 @@ body.language-changing {
         background-image: url(../images/gradient-2.png), url(../images/service-bg.png);
         background-position: center;
         background-size: cover;
+    }
+    .start-text
+    {
+        margin-bottom: 25px;
+    }
+    .stage
+    {
+        margin-bottom: 15px;
+    }
+    .start-block
+    {
+        padding: 0px 0px 0px 80px;
+    }
+    .start-img
+    {
+        width: 500px;
     }
 }
 @media (max-width: 1200px)
@@ -714,6 +743,26 @@ body.language-changing {
         display: flex;
         flex-direction: column;
     }
+    .start-text
+    {
+        margin-bottom: 20px;
+    }
+    .stage
+    {
+        margin-bottom: 10px;
+    }
+    .start-inner
+    {
+        gap: 0;
+    }
+    .start-block
+    {
+        padding: 0px 0px 0px 0px;
+    }
+    .start-img
+    {
+        width: 450px;
+    }
 }
 @media (max-width: 1000px)
 {
@@ -727,6 +776,56 @@ body.language-changing {
     {
         display: flex;
         gap: 30px 0;
+    }
+    .consumers-block
+    {
+        height: 400px;
+    }
+    .consumers-img
+    {
+        width: 385px;
+    }
+    .consumers-title
+    {
+        font-size: 35px;
+        width: 350px;
+    }
+    .consumers-text
+    {
+        font-size: 14px;
+        width: 408px;
+    }
+    .start-inner
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .start-block
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .start-title
+    {
+        text-align: center;
+    }
+    .start-text,
+    .assessment-text
+    {
+        text-align: center;
+        font-size: 14px;
+    }
+    .methodology-title
+    {
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    .assessment
+    {
+        display: flex;
+        justify-content: center;
     }
 }
 @media (max-width: 850px)
@@ -778,6 +877,33 @@ body.language-changing {
     .item-3
     {
         grid-column-start: span 2;
+    }
+    .about-title
+    {
+        font-size: 35px;
+        width: 550px;
+    }
+    .about-btn
+    {
+        padding: 20px 30px;
+    }
+    .consumers-block
+    {
+        height: 300px;
+    }
+    .consumers-img
+    {
+        width: 300px;
+    }
+    .consumers-title
+    {
+        font-size: 30px;
+        width: 350px;
+    }
+    .consumers-text
+    {
+        font-size: 12px;
+        width: 340px;
     }
 }
 @media (max-width: 740px)
@@ -842,6 +968,47 @@ body.language-changing {
         flex-direction: column;
         gap: 35px 0;
     }
+    .consumers-block
+    {
+        height: 300px;
+    }
+    .consumers-img
+    {
+        width: 300px;
+    }
+    .consumers-title
+    {
+        font-size: 20px;
+        width: 255px;
+    }
+    .consumers-text
+    {
+        font-size: 12px;
+        width: 300px;
+    }
+}
+@media (max-width: 680px)
+{
+    .consumers-block
+    {
+        display: flex;
+        flex-direction: column;
+        height: 650px;
+    }
+    .consumers-img
+    {
+        width: 300px;
+    }
+    .consumers-title
+    {
+        font-size: 20px;
+        width: 255px;
+    }
+    .consumers-text
+    {
+        font-size: 12px;
+        width: 300px;
+    }
 }
 @media (max-width: 580px)
 {
@@ -897,6 +1064,20 @@ body.language-changing {
     .newsletter-input
     {
         margin-right: 5px;
+    }
+    .about-title,
+    .start-title
+    {
+        font-size: 30px;
+        width: 400px;
+    }
+    .about-btn
+    {
+        padding: 15px 25px;
+    }
+    .start-img
+    {
+        width: 350px;
     }
 }
 @media (max-width: 480px)
@@ -1025,6 +1206,28 @@ body.language-changing {
     .salon-title
     {
         font-size: 20px;
+    }
+    .about-title
+    {
+        font-size: 20px;
+        width: 300px;
+    }
+    .about-btn
+    {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    .consumers-img
+    {
+        width: 250px;
+    }
+     .consumers-title
+    {
+        width: 255px;
+    }
+    .consumers-text
+    {
+        width: 250px;
     }
 }
 @media (max-width: 320px)

@@ -83,17 +83,17 @@
 .section-consumers
 {
     background-color: var(--LightColor);
-    margin-bottom: 176px;
+    margin-bottom: 100px;
     padding: 103px 0;
 }
 .consumers-block
 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: var(--PrimaryColor);
-    gap: 0 72px;
-    width: 1200px;
+    gap: 0 20px;
+    width: 100%;
     height: 530px;
     margin: 0 auto;
 }
@@ -130,12 +130,15 @@
 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0 50px;
 }
 .start-block
 {
     display: flex;
     flex-direction: column;
-    padding: 52px 113px 54px 113px;
+    padding: 0px 0px 0px 100px;
+    width: 100%;
 }
 .start_text
 {
@@ -153,14 +156,15 @@
 .start-text
 {
     line-height: 1.5;
-    width: 747px;
     color: var(--GrayColor);
     margin-bottom: 33px;
+    width: 100%;
 }
 .start-box
 {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .methodology-title
 {
@@ -193,7 +197,7 @@
 {
     line-height: 1.5;
     color: var(--GrayColor);
-    width: 448px;
+    width: 100%;
 }
 .start_box
 {
@@ -202,10 +206,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    width: 100%;
 }
 .start-img
 {
-    width: 100%;
+    width: 700px;
     border-radius: 20px;
 }
 .start-play
