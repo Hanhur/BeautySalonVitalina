@@ -757,10 +757,21 @@ body.language-changing {
     }
     .start-block
     {
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 50px;
     }
-    .start-img
+    .start-img,
+    .styles-img
     {
+        width: 450px;
+    }
+    .styles-title
+    {
+        font-size: 40px;
+        width: 450px;
+    }
+    .styles-text
+    {
+        font-size: 14px;
         width: 450px;
     }
 }
@@ -821,11 +832,18 @@ body.language-changing {
     {
         text-align: center;
         margin: 0 auto 20px;
+        width: 100%;
     }
     .assessment
     {
         display: flex;
         justify-content: center;
+    }
+    .styles-block
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 35px 0;
     }
 }
 @media (max-width: 850px)
@@ -904,6 +922,10 @@ body.language-changing {
     {
         font-size: 12px;
         width: 340px;
+    }
+    .styles-title
+    {
+        width: 400px;
     }
 }
 @media (max-width: 740px)
@@ -985,6 +1007,10 @@ body.language-changing {
     {
         font-size: 12px;
         width: 300px;
+    }
+    .styles-title
+    {
+        width: 350px;
     }
 }
 @media (max-width: 680px)
@@ -1079,6 +1105,10 @@ body.language-changing {
     {
         width: 350px;
     }
+    .styles-title
+    {
+        width: 300px;
+    }
 }
 @media (max-width: 480px)
 {
@@ -1130,6 +1160,18 @@ body.language-changing {
         align-items: start;
         justify-content: center;
         width: 100%;
+    }
+    .stage
+    {
+        gap: 0 15px;
+    }
+    .start-play
+    {
+        width: 150px;
+    }
+    .styles-title
+    {
+        width: 250px;
     }
 }
 @media (max-width: 435px)
@@ -1207,7 +1249,8 @@ body.language-changing {
     {
         font-size: 20px;
     }
-    .about-title
+    .about-title,
+    .start-title
     {
         font-size: 20px;
         width: 300px;
@@ -1221,13 +1264,18 @@ body.language-changing {
     {
         width: 250px;
     }
-     .consumers-title
+    .consumers-title,
+    .about-title
     {
         width: 255px;
     }
     .consumers-text
     {
         width: 250px;
+    }
+    .start-img
+    {
+        width: 300px;
     }
 }
 @media (max-width: 320px)
