@@ -266,8 +266,7 @@
 /* ========================================== Our Team ================================ */
 .section-team
 {
-    padding: 60px 72px;
-    margin-bottom: 102px;
+    margin-bottom: 100px;
 }
 .team-title
 {
@@ -290,7 +289,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    flex-wrap: wrap;
 }
 .team-list
 {

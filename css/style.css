@@ -883,9 +883,10 @@ body.language-changing {
         font-size: 35px;
     }
     .beautiful-title,
-    .elegance-title
+    .elegance-title,
+    .team-title
     {
-        width: 585px;
+        width: 580px;
     }
     .elegance-text,
     .follow-text
@@ -936,6 +937,12 @@ body.language-changing {
     {
         width: 400px;
     }
+    .team-block
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 @media (max-width: 740px)
 {
@@ -979,7 +986,8 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .follow-title
+    .follow-title,
+    .team-title
     {
         width: 500px;
     }
@@ -1062,7 +1070,8 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .follow-title
+    .follow-title,
+    .team-title
     {
         width: 400px;
     }
@@ -1180,11 +1189,13 @@ body.language-changing {
     {
         width: 150px;
     }
-    .styles-title
+    .styles-title,
+    .team-title
     {
         width: 250px;
     }
-    .styles-text
+    .styles-text,
+    .team-text
     {
         width: 100%;
     }
@@ -1202,6 +1213,11 @@ body.language-changing {
     .newsletter-form_box
     {
         padding: 6px;
+    }
+    .team-block
+    {
+        display: flex;
+        flex-direction: column;
     }
     
 }
@@ -1290,7 +1306,8 @@ body.language-changing {
         width: 250px;
     }
     .start-img,
-    .styles-img
+    .styles-img,
+    .team-img
     {
         width: 300px;
     }
