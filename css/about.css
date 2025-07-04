@@ -335,13 +335,11 @@
 /*  ======================================== Blog ================================= */
 .section-blog
 {
-    padding: 60px 72px;
     margin-bottom: 60px;
 }
 .blog-title
 {
     text-align: center;
-    width: 667px;
     margin: 0 auto;
     margin-bottom: 24px;
 }
@@ -354,7 +352,6 @@
     text-align: center;
     margin: 0 auto;
     color: var(--GrayColor);
-    width: 88px;
     margin-bottom: 40px;
 }
 .blog-inner
@@ -362,7 +359,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 24px;
+    gap: 0 20px;
+    width: 100%;
 }
 .blog-box
 {
@@ -421,7 +419,7 @@
     font-size: 20px;
     font-weight: 700;
     color: var(--DarkColor);
-    width: 306px;
+    width: 100%;
     margin-bottom: 12px;
 }
 .blog-read_link
