@@ -917,12 +917,14 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .team-title
+    .team-title,
+    .services-title
     {
         width: 580px;
     }
     .elegance-text,
-    .follow-text
+    .follow-text,
+    .services-text
     {
         width: 100%;
     }
@@ -1090,6 +1092,10 @@ body.language-changing {
         display: flex;
         flex-direction: column;
     }
+    .services-title
+    {
+        width: 500px;
+    }
 }
 @media (max-width: 580px)
 {
@@ -1123,7 +1129,8 @@ body.language-changing {
     .recommended-text,
     .elegance-text,
     .newsletter-text,
-    .follow-text
+    .follow-text,
+    .services-text
     {
         font-size: 16px;
     }
@@ -1148,7 +1155,8 @@ body.language-changing {
         margin-right: 5px;
     }
     .about-title,
-    .start-title
+    .start-title,
+    .services-title
     {
         font-size: 30px;
         width: 400px;
@@ -1229,7 +1237,8 @@ body.language-changing {
     }
     .styles-title,
     .team-title,
-    .blog-title
+    .blog-title,
+    .services-title
     {
         width: 250px;
     }
@@ -1308,7 +1317,8 @@ body.language-changing {
     .beautiful-text,
     .elegance-text,
     .newsletter-text,
-    .follow-text
+    .follow-text,
+    .services-text
     {
         font-size: 14px;
     }
@@ -1321,7 +1331,8 @@ body.language-changing {
         font-size: 20px;
     }
     .about-title,
-    .start-title
+    .start-title,
+    .services-title
     {
         font-size: 20px;
         width: 300px;
