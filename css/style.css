@@ -838,6 +838,32 @@ body.language-changing {
     {
         width: 450px;
     }
+    .book-inner
+    {
+        width: 980px;
+        padding: 30px;
+    }
+    .book-title
+    {
+        font-size: 40px;
+        width: 400px;
+    }
+    .book-text
+    {
+        width: 100%;
+    }
+    .book-list
+    {
+        gap: 20px 0;
+    }
+    .book-block
+    {
+        width: 100%;
+    }
+    .book_input
+    {
+        width: 570px;
+    }
 }
 @media (max-width: 1000px)
 {
@@ -935,6 +961,25 @@ body.language-changing {
         font-size: 15px;
         width: 350px;
     }
+    .book-inner
+    {
+        padding: 15px;
+        width: 850px;
+        height: 630px;
+        gap: 0 20px;
+    }
+    .book-input
+    {
+        width: 230px;
+    }
+    .book_input
+    {
+        width: 465px;
+    }
+    .book-text
+    {
+        width: 85%;
+    }
 }
 @media (max-width: 880px)
 {
@@ -958,6 +1003,38 @@ body.language-changing {
     .order-price
     {
         order: 2;
+    }
+    .book-inner
+    {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 1155px;
+        gap: 20px 0;
+    }
+    .book_text
+    {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .book-title
+    {
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    .book-text
+    {
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    .book-form
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .book-btn
+    {
+        font-size: 20px;
     }
 }
 @media (max-width: 850px)
@@ -1215,7 +1292,7 @@ body.language-changing {
     .newsletter-title,
     .newsletter-text
     {
-        width: 100%;
+        width: 500px;
         text-align: center;
     }
     .beautiful-text,
@@ -1264,7 +1341,8 @@ body.language-changing {
     {
         width: 350px;
     }
-    .styles-title
+    .styles-title,
+    .book-title
     {
         width: 300px;
     }
@@ -1277,6 +1355,34 @@ body.language-changing {
     .prices-text
     {
         width: 400px;
+    }
+    .book-inner
+    {
+        width: 400px;
+        height: 1180px;
+    }
+    .book-img
+    {
+        width: 200px;
+    }
+    .book-list
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .book_item
+    {
+        display: flex;
+        width: 230px;
+    }
+    .book_input
+    {
+        width: 100%;
+    }
+    .book-btn
+    {
+        font-size: 18px;
     }
 }
 @media (max-width: 480px)
@@ -1395,6 +1501,20 @@ body.language-changing {
         display: flex;
         flex-direction: column;
     }   
+    .book-inner
+    {
+        width: 300px;
+        padding: 0;
+    }
+    .book-title
+    {
+        width: 300px;
+    }
+    .book-text
+    {
+        font-size: 14px;
+        width: 250px;
+    }
 }
 @media (max-width: 410px)
 {
@@ -1508,6 +1628,10 @@ body.language-changing {
     .prices-block_1-img
     {
         width: 300px;
+    }
+    .book-btn
+    {
+        font-size: 16px;
     }
 }
 @media (max-width: 320px)
