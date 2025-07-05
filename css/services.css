@@ -93,15 +93,14 @@
 {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0 110px;
-    padding: 20px 72px;
+    justify-content: space-evenly;
+    padding: 20px 70px;
     width: 100%;
     flex-wrap: wrap;
 }
 .prices-box
 {
-    padding: 98px 0;
+    padding: 50px 0;
 }
 .prices_title
 {
