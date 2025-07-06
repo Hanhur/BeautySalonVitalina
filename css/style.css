@@ -768,7 +768,8 @@ body.language-changing {
     .styles-title,
     .team-title,
     .blog-title,
-    .prices-title
+    .prices-title,
+    .contact-title
     {
         font-size: 40px;
         width: 450px;
@@ -778,7 +779,8 @@ body.language-changing {
         font-size: 14px;
         width: 450px;
     }
-    .blog_title
+    .blog_title,
+    .contact-text
     {
         font-size: 16px;
     }
@@ -805,6 +807,33 @@ body.language-changing {
     .prices-block_1-img
     {
         width: 350px;
+    }
+    .contact_img
+    {
+        position: relative;
+    }
+    .contact-img
+    {
+        width: 550px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100px;
+        width: 450px;
+    }
+    .contact-title
+    {
+        font-size: 40px;
+        width: 385px;
+    }
+    .contact-text
+    {
+        font-size: 16px;
+        width: 480px;
     }
 }
 @media (max-width: 1100px)
@@ -863,6 +892,42 @@ body.language-changing {
     .book_input
     {
         width: 570px;
+    }
+    .contact-title
+    {
+        font-size: 32px;
+        width: 300px;
+    }
+    .contact-text
+    {
+        font-size: 16px;
+        width: 380px;
+        margin-bottom: 32px;
+    }
+    .contact_img
+    {
+        position: relative;
+    }
+    .contact-img
+    {
+        width: 500px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100px;
+        width: 400px;
+    }
+    .contact-block
+    {
+        gap: 0 25px;
+    }
+    .contact-box
+    {
+        padding: 0;
     }
 }
 @media (max-width: 1000px)
@@ -980,6 +1045,44 @@ body.language-changing {
     {
         width: 85%;
     }
+    .contact__box
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 30px 0;
+    }
+    .contact-map
+    {
+        height: 380px;
+    }
+}
+@media (max-width: 950px)
+{
+    .contact_img
+    {
+        position: relative;
+    }
+    .contact-img
+    {
+        width: 450px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100px;
+        width: 350px;
+    }
+    .contact-list
+    {
+        gap: 15px 0;
+    }
+    .contact-link
+    {
+        gap: 0 20px;
+    }
 }
 @media (max-width: 880px)
 {
@@ -1035,6 +1138,13 @@ body.language-changing {
     .book-btn
     {
         font-size: 20px;
+    }
+    .contact-block
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 @media (max-width: 850px)
@@ -1447,8 +1557,12 @@ body.language-changing {
     .styles-title,
     .team-title,
     .blog-title,
-    .services-title
+    .services-title,
+    .prices-title,
+    .prices_title,
+    .contact-title
     {
+        font-size: 25px;
         width: 250px;
     }
     .styles-text,
@@ -1456,12 +1570,6 @@ body.language-changing {
     .blog-text
     {
         width: 100%;
-    }
-    .prices-title,
-    .prices_title
-    {
-        font-size: 25px;
-        width: 250px;
     }
     .prices-text,
     .prices_text
@@ -1480,6 +1588,24 @@ body.language-changing {
     .prices-block_5
     {
         padding: 0;
+    }
+    .contact_img
+    {
+        position: relative;
+    }
+    .contact-img
+    {
+        width: 400px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100px;
+        width: 300px;
+        height: 370px;
     }
 }
 @media (max-width: 435px)
@@ -1556,8 +1682,12 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .follow-title
+    .follow-title,
+    .about-title,
+    .start-title,
+    .services-title
     {
+        font-size: 20px;
         width: 300px;
     }
     .beautiful-text,
@@ -1575,13 +1705,6 @@ body.language-changing {
     .salon-title
     {
         font-size: 20px;
-    }
-    .about-title,
-    .start-title,
-    .services-title
-    {
-        font-size: 20px;
-        width: 300px;
     }
     .about-btn,
     .styles-btn
@@ -1632,6 +1755,50 @@ body.language-changing {
     .book-btn
     {
         font-size: 16px;
+    }
+    .contact_text
+    {
+        text-align: center;
+    }
+    .contact-title
+    {
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    .contact-text
+    {
+        text-align: center;
+        width: 300px;
+        margin: 0 auto 32px;
+    }
+    .contact_img
+    {
+        position: relative;
+    }
+    .contact-img
+    {
+        width: 300px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100px;
+        width: 200px;
+        height: 270px;
+    }
+    .contact-link
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0;
+    }
+    .contact-address
+    {
+        text-align: center;
     }
 }
 @media (max-width: 320px)
