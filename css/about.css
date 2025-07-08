@@ -212,6 +212,10 @@
 {
     width: 700px;
     border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .start-play
 {
@@ -238,6 +242,10 @@
 .styles-img
 {
     border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .styles-title
 {
@@ -307,6 +315,10 @@
     width: 100%;
     margin-bottom: 16px;
     border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .team_title
 {
@@ -389,6 +401,10 @@
 {
     width: 100%;
     border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 .blog-category_span
 {
