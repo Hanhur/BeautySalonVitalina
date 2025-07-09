@@ -1322,14 +1322,6 @@ body.language-changing {
         flex-wrap: wrap;
         width: 100%;
     }
-    .block-form,
-    .block-search
-    {
-        display: flex;
-        flex-direction: column;
-        gap: 20px 0;
-        padding: 15px;
-    }
     .block-title
     {
         font-size: 35px;
@@ -1445,11 +1437,6 @@ body.language-changing {
     {
         padding: 170px 50px 25px 25px;
     }
-    .block-form
-    {
-        width: 275px;
-        border-radius: 33px;
-    }
     .title 
     {
         font-size: 30px;
@@ -1460,7 +1447,7 @@ body.language-changing {
     .team-title
     {
         font-size: 25px;
-        width: 350px;
+        width: 300px;
     }
     .newsletter-title,
     .newsletter-text
@@ -1534,7 +1521,7 @@ body.language-changing {
     .elegance-text,
     .follow-text
     {
-        width: 400px;
+        width: 300px;
     }
     .book-inner
     {
@@ -1588,6 +1575,7 @@ body.language-changing {
         flex-direction: column;
         gap: 35px 0;
         width: 350px;
+        padding: 9px 15px;
     }
     .newsletter-form_box
     {
@@ -1597,6 +1585,24 @@ body.language-changing {
     {
         margin-right: 0;
     }
+    /* .beautiful-title,
+    .elegance-title,
+    .follow-title,
+    .team-title
+    {
+        font-size: 20px;
+        width: 250px;
+    }
+    .prices-text,
+    .newsletter-text,
+    .beautiful-text,
+    .recommended-text,
+    .elegance-text,
+    .follow-text
+    {
+        font-size: 15px;
+        width: 300px;
+    } */
 }
 @media (max-width: 480px)
 {
@@ -1614,6 +1620,32 @@ body.language-changing {
     {
         width: 45px;
     }
+    .block-form,
+    .block-search
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        padding: 15px;
+        width: 275px;
+        border-radius: 33px;
+    }
+    .name,
+    .address
+    {
+        margin: 0 auto;
+    }
+    .name-label, 
+    .address-label 
+    {
+        font-size: 16px;
+    }
+    .name-link,
+    .address-link
+    {
+        font-size: 75%;
+        width: 200px;
+    }
     .block-sevrice
     {
         padding: 170px 50px 25px 25px;
@@ -1625,7 +1657,6 @@ body.language-changing {
     .newsletter-form
     {
         padding: 9px 15px;
-        width: 440px;
     }
     .footer-address_item
     {
@@ -1890,5 +1921,35 @@ body.language-changing {
     .header_item
     {
         font-size: 12px;
+    }
+    .block-form,
+    .block-search
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        padding: 15px;
+        width: 230px;
+        border-radius: 33px;
+    }
+    .search-link
+    {
+        padding: 14px 15px;
+    }
+    .name,
+    .address
+    {
+        margin: 0 auto;
+    }
+    .name-label, 
+    .address-label 
+    {
+        font-size: 16px;
+    }
+    .name-link,
+    .address-link
+    {
+        font-size: 75%;
+        width: 200px;
     }
 }
