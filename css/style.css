@@ -326,6 +326,7 @@ body {
 .section-beautiful {
     background-color: rgba(235, 243, 245, 50%);
     padding: 64px 0;
+    margin-bottom: 30px;
 }
 .beautiful-title {
     text-align: center;
@@ -1588,7 +1589,6 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .follow-title,
     .team-title
     {
         font-size: 20px;
@@ -1966,20 +1966,23 @@ body.language-changing {
     }
     .beautiful-title,
     .elegance-title,
-    .newsletter-title
+    .newsletter-title,
+    .follow-title
     {
         width: 250px;
     }
     .beautiful-text,
     .recommended-text,
     .beautiful-text,
-    .newsletter-text
+    .newsletter-text,
+    .follow-text
     {
         width: 200px;
     }
     .elegance
     {
         padding: 20px;
+        gap: 0 20px;
     }
     .elegance_text
     {
@@ -1993,5 +1996,20 @@ body.language-changing {
     .newsletter-input
     {
         font-size: 75%;
+    }
+    .footer-block
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .item-3,
+    .footer-address_item
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
