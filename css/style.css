@@ -316,7 +316,7 @@ body {
     gap: 24px 0;
 }
 .block-img {
-    width: 100%;
+    width: 125px;
 }
 .block_text {
     font-weight: 700;
@@ -538,6 +538,7 @@ body {
     font-size: 32px;
     font-weight: 700;
     color: var(--WhiteColor);
+    white-space: nowrap;
 }
 /* ==================================== Subscribe ===================================== */
 .section-newsletter {
@@ -1442,6 +1443,7 @@ body.language-changing {
         font-size: 30px;
     }
     .beautiful-title,
+    .newsletter-title,
     .elegance-title,
     .follow-title,
     .team-title
@@ -1452,7 +1454,6 @@ body.language-changing {
     .newsletter-title,
     .newsletter-text
     {
-        width: 500px;
         text-align: center;
     }
     .beautiful-text,
@@ -1521,7 +1522,7 @@ body.language-changing {
     .elegance-text,
     .follow-text
     {
-        width: 300px;
+        width: 350px;
     }
     .book-inner
     {
@@ -1585,7 +1586,7 @@ body.language-changing {
     {
         margin-right: 0;
     }
-    /* .beautiful-title,
+    .beautiful-title,
     .elegance-title,
     .follow-title,
     .team-title
@@ -1602,7 +1603,7 @@ body.language-changing {
     {
         font-size: 15px;
         width: 300px;
-    } */
+    }
 }
 @media (max-width: 480px)
 {
@@ -1653,10 +1654,6 @@ body.language-changing {
     .title 
     {
         font-size: 25px;
-    }
-    .newsletter-form
-    {
-        padding: 9px 15px;
     }
     .footer-address_item
     {
@@ -1801,9 +1798,11 @@ body.language-changing {
     .elegance-text,
     .newsletter-text,
     .follow-text,
-    .services-text
+    .services-text,
+    .recommended-text
     {
         font-size: 14px;
+        width: 250px;
     }
     .block-box
     {
@@ -1907,6 +1906,11 @@ body.language-changing {
     {
         text-align: center;
     }
+    .newsletter-form
+    {
+        width: 300px;
+        padding: 9px 10px;
+    }
 }
 @media (max-width: 320px)
 {
@@ -1959,5 +1963,35 @@ body.language-changing {
     .block_text
     {
         font-size: 15px;
+    }
+    .beautiful-title,
+    .elegance-title,
+    .newsletter-title
+    {
+        width: 250px;
+    }
+    .beautiful-text,
+    .recommended-text,
+    .beautiful-text,
+    .newsletter-text
+    {
+        width: 200px;
+    }
+    .elegance
+    {
+        padding: 20px;
+    }
+    .elegance_text
+    {
+        font-size: 25px;
+    }
+    .newsletter-form
+    {
+        width: 250px;
+        padding: 9px 10px;
+    }
+    .newsletter-input
+    {
+        font-size: 75%;
     }
 }
