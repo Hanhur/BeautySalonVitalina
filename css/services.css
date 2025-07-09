@@ -109,6 +109,7 @@
     font-weight: 700;
     color: var(--PrimaryColor);
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 .prices_text
 {
