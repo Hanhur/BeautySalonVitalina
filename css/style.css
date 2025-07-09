@@ -1967,7 +1967,8 @@ body.language-changing {
     .beautiful-title,
     .elegance-title,
     .newsletter-title,
-    .follow-title
+    .follow-title,
+    .start-title
     {
         width: 250px;
     }
@@ -1982,7 +1983,7 @@ body.language-changing {
     .elegance
     {
         padding: 20px;
-        gap: 0 20px;
+        gap: 0 15px;
     }
     .elegance_text
     {
@@ -2011,5 +2012,32 @@ body.language-changing {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .consumers-img
+    {
+        width: 230px;
+    }
+    .consumers_text
+    {
+        margin: 0 auto 9px;
+    }
+    .consumers-title,
+    .consumers-text
+    {
+        text-align: center;
+    }
+    .start-img,
+    .styles-img,
+    .team-img
+    {
+        width: 250px;
+    }
+    .start-play
+    {
+        width: 100px;
+    }
+    .stage
+    {
+        gap: 0 10px;
     }
 }
