@@ -1968,7 +1968,9 @@ body.language-changing {
     .elegance-title,
     .newsletter-title,
     .follow-title,
-    .start-title
+    .start-title,
+    .services-title,
+    .book-title
     {
         width: 250px;
     }
@@ -1976,7 +1978,8 @@ body.language-changing {
     .recommended-text,
     .beautiful-text,
     .newsletter-text,
-    .follow-text
+    .follow-text,
+    .book-text
     {
         width: 200px;
     }
@@ -2028,7 +2031,8 @@ body.language-changing {
     }
     .start-img,
     .styles-img,
-    .team-img
+    .team-img,
+    .prices-block_1-img
     {
         width: 250px;
     }
@@ -2039,5 +2043,20 @@ body.language-changing {
     .stage
     {
         gap: 0 10px;
+    }
+    .prices_title
+    {
+        text-align: center;
+        margin: 0 auto 12px;
+    }
+    .prices_text
+    {
+        width: 200px;
+        text-align: center;
+        margin: 0 auto 20px;
+    }
+    .book-inner
+    {
+        width: 250px;
     }
 }
