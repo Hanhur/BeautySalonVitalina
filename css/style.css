@@ -1979,7 +1979,8 @@ body.language-changing {
     .beautiful-text,
     .newsletter-text,
     .follow-text,
-    .book-text
+    .book-text,
+    .contact-text
     {
         width: 200px;
     }
@@ -2032,9 +2033,20 @@ body.language-changing {
     .start-img,
     .styles-img,
     .team-img,
-    .prices-block_1-img
+    .prices-block_1-img,
+    .contact-img
     {
         width: 250px;
+    }
+    .contact-background
+    {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 50px;
+        width: 200px;
+        height: 230px;
     }
     .start-play
     {
