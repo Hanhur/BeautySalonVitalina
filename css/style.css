@@ -316,7 +316,7 @@ body {
     gap: 24px 0;
 }
 .block-img {
-    width: 126px;
+    width: 100%;
 }
 .block_text {
     font-weight: 700;
@@ -1951,5 +1951,13 @@ body.language-changing {
     {
         font-size: 75%;
         width: 200px;
+    }
+    .block-list
+    {
+        gap: 10px;
+    }
+    .block_text
+    {
+        font-size: 15px;
     }
 }
