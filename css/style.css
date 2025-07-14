@@ -216,14 +216,14 @@ body {
     font-weight: 600;
     color: var(--WhiteColor);
     text-transform: uppercase;
-    width: 338px;
+    /* width: 338px; */
 }
 .block-title {
     font-family: "Playfair Display", serif;
     font-size: 70px;
     font-weight: 700;
     color: var(--LightColor);
-    width: 510px;
+    width: 545px;
     margin-bottom: 24px;
 }
 .block-text {

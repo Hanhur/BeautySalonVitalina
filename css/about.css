@@ -193,7 +193,9 @@
     width: 211px;
     margin-bottom: 5px;
 }
-.assessment-text
+.assessment-text,
+.initialisation-text,
+.treatment-text
 {
     line-height: 1.5;
     color: var(--GrayColor);

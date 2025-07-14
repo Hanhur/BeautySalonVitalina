@@ -1,275 +1,752 @@
+// // Language data object containing translations for all elements
+import { translations } from "./translations.js";
 
-// // import { translations } from "./translations.js";
+// Function to change language
+function changeLanguage(lang) 
+{
+    // Set the selected language in localStorage
+    localStorage.setItem('selectedLanguage', lang);
 
-// // // Функция для плавного изменения языка
-// // async function changeLanguage(lang) {
-// //     // Добавляем класс для плавного исчезновения
-// //     document.body.classList.add('language-changing');
+    // Update the language selector
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) 
+    {
+        languageSelect.value = lang;
+    }
 
-// //     // Ждем завершения анимации
-// //     await new Promise(resolve => setTimeout(resolve, 300));
+    // Get all elements with data attributes
+    const elements = document.querySelectorAll('[data]');
 
-// //     // Обновляем контент
-// //     updateContent(lang);
-
-// //     // Удаляем класс для появления нового контента
-// //     document.body.classList.remove('language-changing');
-
-// //     // Сохраняем выбранный язык
-// //     localStorage.setItem('selectedLanguage', lang);
-// // }
-
-// // // Функция обновления контента
-// // function updateContent(lang) {
-// //     // Обновляем тексты с атрибутом data-i18n
-// //     document.querySelectorAll('[data]').forEach(el => {
-// //         const key = el.getAttribute('data');
-// //         if (translations[lang] && translations[lang][key]) {
-// //             el.textContent = translations[lang][key];
-// //         }
-// //     });
-
-// //     // Обновляем выбранный язык в селекторе
-// //     const select = document.getElementById('language-select');
-// //     if (select) select.value = lang;
-// // }
-
-// // // Инициализация при загрузке страницы
-// // document.addEventListener('DOMContentLoaded', () => {
-// //     // Устанавливаем обработчик для селектора языка
-// //     const languageSelect = document.getElementById('language-select');
-// //     if (languageSelect) {
-// //         languageSelect.addEventListener('change', (e) => {
-// //             changeLanguage(e.target.value);
-// //         });
-// //     }
-
-// //     // Восстанавливаем сохраненный язык или используем язык по умолчанию
-// //     const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-// //     changeLanguage(savedLang);
-// // });
-
-// const translations = {
-//     en: {
-//         home: "Home",
-//         about: "About Us",
-//         services: "Services",
-//         contact: "Contact Us",
-//         login: "Login",
-//         signup: "Signup",
-//         serviceNameLabel: "Service Name",
-//         addressLabel: "Address",
-//         search: "Search",
-//         subscribeTitle: "Subscribe to newsletter",
-//         subscribeText: "Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.",
-//         newsletterPlaceholder: "Enter your mail",
-//         newsletterButton: "Subscribe",
-//         bookNow: "BOOK NOW",
-//         followTitle: "Follow our Instagram",
-//     },
-//     ua: {
-//         home: "Головна",
-//         about: "Про нас",
-//         services: "Послуги",
-//         contact: "Контакти",
-//         login: "Увійти",
-//         signup: "Реєстрація",
-//         serviceNameLabel: "Назва послуги",
-//         addressLabel: "Адреса",
-//         search: "Пошук",
-//         subscribeTitle: "Підписка на розсилку",
-//         subscribeText: "Підпишіться, щоб бути в курсі акцій, знижок та оновлень.",
-//         newsletterPlaceholder: "Введіть електронну пошту",
-//         newsletterButton: "Підписатися",
-//         bookNow: "ЗАПИСАТИСЯ",
-//         followTitle: "Наш Instagram",
-//     },
-//     cz: {
-//         home: "Domů",
-//         about: "O nás",
-//         services: "Služby",
-//         contact: "Kontakt",
-//         login: "Přihlásit se",
-//         signup: "Registrovat se",
-//         serviceNameLabel: "Název služby",
-//         addressLabel: "Adresa",
-//         search: "Hledat",
-//         subscribeTitle: "Přihlásit se k odběru",
-//         subscribeText: "Přihlaste se a získejte informace o akcích, slevách a novinkách.",
-//         newsletterPlaceholder: "Zadejte e-mail",
-//         newsletterButton: "Odebírat",
-//         bookNow: "REZERVOVAT",
-//         followTitle: "Sledujte nás na Instagramu",
-//     },
-// };
-
-// function translatePage(lang) {
-//     const t = translations[lang];
-
-//     document.querySelectorAll("[data]").forEach(el => {
-//         const key = el.getAttribute("data");
-//         if (t[key]) el.textContent = t[key];
-//     });
-
-//     const serviceInput = document.querySelector(".name-input");
-//     const addressInput = document.querySelector(".address-input");
-//     const newsletterInput = document.querySelector(".newsletter-input");
-//     const newsletterBtn = document.querySelector(".newsletter-btn");
-
-//     if (serviceInput) serviceInput.placeholder = t.serviceNameLabel;
-//     if (addressInput) addressInput.placeholder = t.addressLabel;
-//     if (newsletterInput) newsletterInput.placeholder = t.newsletterPlaceholder;
-//     if (newsletterBtn) newsletterBtn.textContent = t.newsletterButton;
-
-//     const newsletterTitle = document.querySelector(".newsletter-title");
-//     const newsletterText = document.querySelector(".newsletter-text");
-//     if (newsletterTitle) newsletterTitle.textContent = t.subscribeTitle;
-//     if (newsletterText) newsletterText.textContent = t.subscribeText;
-
-//     const bookNowButtons = document.querySelectorAll(".recommended-btn");
-//     bookNowButtons.forEach(btn => btn.textContent = t.bookNow);
-
-//     const followTitle = document.querySelector(".follow-title");
-//     if (followTitle) followTitle.textContent = t.followTitle;
-// }
-
-// // Слушаем изменение языка из селекта
-// document.addEventListener("DOMContentLoaded", () => {
-//     const langSelect = document.getElementById("language-select");
-//     translatePage(langSelect.value); // Начальный перевод
-
-//     langSelect.addEventListener("change", () => {
-//         const selectedLang = langSelect.value;
-//         translatePage(selectedLang);
-//     });
-// });
-
-// language-switcher.js
-
-const translations = {
-  en: {
-    home: "Home",
-    about: "About Us",
-    services: "Services",
-    contact: "Contact Us",
-    login: "Login",
-    signup: "Signup",
-    serviceNameLabel: "Service Name",
-    addressLabel: "Address",
-    servicePlaceholder: "Book your services...",
-    addressPlaceholder: "Where",
-    search: "Search",
-    subscribeTitle: "Subscribe to newsletter",
-    subscribeText: "Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.",
-    newsletterPlaceholder: "Enter your mail",
-    newsletterButton: "Subscribe",
-    bookNow: "BOOK NOW",
-    followTitle: "Follow our Instagram",
-    recommended: "Recommended",
-    ourServices: "Our Services",
-    beautyTitle: "We are Experienced in making you very Beautiful",
-    beautyText: "Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.",
-    eleganceTitle: "Elegance comes from being as beautiful inside as outside",
-    eleganceText: "Eleifend arcu non lorem justo in tempus purus gravida. Est tortor egestas sed feugiat elementum. Viverra nulla amet a ultrices massa dui. Tortor est purus morbi vitae arcu suspendisse amet."
-  },
-  ua: {
-    home: "Головна",
-    about: "Про нас",
-    services: "Послуги",
-    contact: "Контакти",
-    login: "Увійти",
-    signup: "Реєстрація",
-    serviceNameLabel: "Назва послуги",
-    addressLabel: "Адреса",
-    servicePlaceholder: "Забронюйте послугу...",
-    addressPlaceholder: "Де саме",
-    search: "Пошук",
-    subscribeTitle: "Підписка на розсилку",
-    subscribeText: "Підпишіться, щоб отримувати останні акції, знижки та новини.",
-    newsletterPlaceholder: "Введіть вашу пошту",
-    newsletterButton: "Підписатися",
-    bookNow: "ЗАПИСАТИСЯ",
-    followTitle: "Наш Instagram",
-    recommended: "Рекомендовано",
-    ourServices: "Наші послуги",
-    beautyTitle: "Ми знаємо, як зробити вас красивими",
-    beautyText: "Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.",
-    eleganceTitle: "Елегантність — це краса душі та зовнішності",
-    eleganceText: "Eleifend arcu non lorem justo in tempus purus gravida. Est tortor egestas sed feugiat elementum. Viverra nulla amet a ultrices massa dui. Tortor est purus morbi vitae arcu suspendisse amet."
-  },
-  cz: {
-    home: "Domů",
-    about: "O nás",
-    services: "Služby",
-    contact: "Kontakt",
-    login: "Přihlásit se",
-    signup: "Registrovat se",
-    serviceNameLabel: "Název služby",
-    addressLabel: "Adresa",
-    servicePlaceholder: "Zarezervujte si služby...",
-    addressPlaceholder: "Kde",
-    search: "Hledat",
-    subscribeTitle: "Přihlásit se k odběru",
-    subscribeText: "Přihlaste se k odběru a získejte novinky o akcích a slevách.",
-    newsletterPlaceholder: "Zadejte svůj e-mail",
-    newsletterButton: "Odebírat",
-    bookNow: "REZERVOVAT",
-    followTitle: "Sledujte nás na Instagramu",
-    recommended: "Doporučeno",
-    ourServices: "Naše služby",
-    beautyTitle: "Máme zkušenosti, jak vás učinit krásnými",
-    beautyText: "Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.",
-    eleganceTitle: "Elegance znamená být krásný uvnitř i navenek",
-    eleganceText: "Eleifend arcu non lorem justo in tempus purus gravida. Est tortor egestas sed feugiat elementum. Viverra nulla amet a ultrices massa dui. Tortor est purus morbi vitae arcu suspendisse amet."
-  }
-};
-
-function translatePage(lang) {
-  const t = translations[lang];
-  if (!t) return;
-
-  const map = {
-    home: '[data="home"]',
-    about: '[data="about"]',
-    services: '[data="services"]',
-    contact: '[data="contact"]',
-    login: '.login',
-    signup: '.signup',
-    serviceNameLabel: '.name-label',
-    addressLabel: '.address-label',
-    servicePlaceholder: '.name-input',
-    addressPlaceholder: '.address-input',
-    search: '.search-text',
-    subscribeTitle: '.newsletter-title',
-    subscribeText: '.newsletter-text',
-    newsletterPlaceholder: '.newsletter-input',
-    newsletterButton: '.newsletter-btn',
-    bookNow: '.recommended-btn',
-    followTitle: '.follow-title',
-    recommended: '.recommended-title',
-    ourServices: '.recommended_text',
-    beautyTitle: '.beautiful-title',
-    beautyText: '.beautiful-text',
-    eleganceTitle: '.elegance-title',
-    eleganceText: '.elegance-text'
-  };
-
-  for (const key in map) {
-    const el = document.querySelectorAll(map[key]);
-    el.forEach(item => {
-      if (key.includes('Placeholder')) {
-        item.placeholder = t[key];
-      } else if (item.tagName === 'INPUT' || item.tagName === 'TEXTAREA') {
-        item.value = t[key];
-      } else {
-        item.textContent = t[key];
-      }
+    // Update each element's text content
+    elements.forEach(element => {
+        const key = element.getAttribute('data');
+        if (translations[lang] && translations[lang][key]) 
+        {
+            element.textContent = translations[lang][key];
+        }
     });
-  }
+
+    // Update common elements that don't have data attributes
+    updateCommonElements(lang);
+
+    // Page-specific updates
+    if (document.querySelector('.section-service')) 
+    {
+        updateIndexPage(lang);
+    }
+
+    if (document.querySelector('.section-about')) 
+    {
+        updateAboutPage(lang);
+    }
+
+    if (document.querySelector('.section-services')) 
+    {
+        updateServicesPage(lang);
+    }
+
+    if (document.querySelector('.section-contact')) 
+    {
+        updateContactPage(lang);
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const langSelect = document.getElementById('language-select');
-  translatePage(langSelect.value);
-  langSelect.addEventListener('change', () => translatePage(langSelect.value));
+// Update common elements across all pages
+function updateCommonElements(lang) 
+{
+    // Update login/signup links if they exist
+    const loginLinks = document.querySelectorAll('.login');
+    if (loginLinks.length > 0 && translations[lang] && translations[lang]['login']) 
+    {
+        loginLinks.forEach(link => {
+            link.textContent = translations[lang]['login'];
+        });
+    }
+
+    const signupLinks = document.querySelectorAll('.signup');
+    if (signupLinks.length > 0 && translations[lang] && translations[lang]['signup']) 
+    {
+        signupLinks.forEach(link => {
+            link.textContent = translations[lang]['signup'];
+        });
+    }
+
+    // Update footer elements
+    const exploreTitles = document.querySelectorAll('.item-1 .footer-title');
+    if (exploreTitles.length > 0 && translations[lang] && translations[lang]['explore']) 
+    {
+        exploreTitles.forEach(title => {
+            title.textContent = translations[lang]['explore'];
+        });
+    }
+
+    const utilityTitles = document.querySelectorAll('.item-2 .footer-title');
+    if (utilityTitles.length > 0 && translations[lang] && translations[lang]['utility']) 
+    {
+        utilityTitles.forEach(title => {
+            title.textContent = translations[lang]['utility'];
+        });
+    }
+
+    const keepInTouchTitles = document.querySelectorAll('.item-3 .footer-title');
+    if (keepInTouchTitles.length > 0 && translations[lang] && translations[lang]['keep-in-touch']) 
+    {
+        keepInTouchTitles.forEach(title => {
+            title.textContent = translations[lang]['keep-in-touch'];
+        });
+    }
+
+    const privacyLinks = document.querySelectorAll('.item-2 .footer-block_list li:nth-child(1) .footer-block_link');
+    if (privacyLinks.length > 0 && translations[lang] && translations[lang]['privacy']) 
+    {
+        privacyLinks.forEach(link => {
+            link.textContent = translations[lang]['privacy'];
+        });
+    }
+
+    const termsLinks = document.querySelectorAll('.item-2 .footer-block_list li:nth-child(2) .footer-block_link');
+    if (termsLinks.length > 0 && translations[lang] && translations[lang]['terms']) 
+    {
+        termsLinks.forEach(link => {
+            link.textContent = translations[lang]['terms'];
+        });
+    }
+
+    const addressSpans = document.querySelectorAll('.address-span');
+    if (addressSpans.length > 0 && translations[lang] && translations[lang]['address']) 
+    {
+        addressSpans.forEach(span => {
+            span.textContent = translations[lang]['address'];
+        });
+    }
+
+    const mailSpans = document.querySelectorAll('.footer-address_item:nth-child(2) .address-span');
+    if (mailSpans.length > 0 && translations[lang] && translations[lang]['mail']) 
+    {
+        mailSpans.forEach(span => {
+            span.textContent = translations[lang]['mail'];
+        });
+    }
+
+    const phoneSpans = document.querySelectorAll('.footer-address_item:nth-child(3) .address-span');
+    if (phoneSpans.length > 0 && translations[lang] && translations[lang]['phone']) 
+    {
+        phoneSpans.forEach(span => {
+            span.textContent = translations[lang]['phone'];
+        });
+    }
+
+    // Update read more links
+    const readMoreLinks = document.querySelectorAll('.blog-read_link, .prices_link');
+    if (readMoreLinks.length > 0 && translations[lang]) 
+    {
+        const readMoreText = translations[lang]['read-more'] || 'Read more';
+        const viewAllText = translations[lang]['view-all'] || 'View all';
+
+        readMoreLinks.forEach(link => {
+            if (link.classList.contains('prices_link')) 
+            {
+                link.textContent = viewAllText;
+            } 
+            else 
+            {
+                const textNode = Array.from(link.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+                if (textNode) 
+                {
+                    textNode.textContent = readMoreText;
+                }
+            }
+        });
+    }
+
+    // Update send message buttons
+    const sendMessageBtns = document.querySelectorAll('.book-btn');
+    if (sendMessageBtns.length > 0 && translations[lang] && translations[lang]['send-message']) 
+    {
+        sendMessageBtns.forEach(btn => {
+            btn.textContent = translations[lang]['send-message'];
+        });
+    }
+}
+
+// Update index page specific elements
+function updateIndexPage(lang) 
+{
+    const serviceText = document.querySelector('.box-text');
+    if (serviceText && translations[lang] && translations[lang]['service-text']) 
+    {
+        serviceText.textContent = translations[lang]['service-text'];
+    }
+
+    const serviceTitle = document.querySelector('.block-title');
+    if (serviceTitle && translations[lang] && translations[lang]['service-title']) 
+    {
+        serviceTitle.textContent = translations[lang]['service-title'];
+    }
+
+    const serviceDescription = document.querySelector('.block-text');
+    if (serviceDescription && translations[lang] && translations[lang]['service-description']) 
+    {
+        serviceDescription.textContent = translations[lang]['service-description'];
+    }
+
+    const serviceNameLabel = document.querySelector('.name-label');
+    if (serviceNameLabel && translations[lang] && translations[lang]['service-name']) 
+    {
+        serviceNameLabel.textContent = translations[lang]['service-name'];
+    }
+
+    const serviceNameInput = document.querySelector('.name-input');
+    if (serviceNameInput && translations[lang] && translations[lang]['service-placeholder']) 
+    {
+        serviceNameInput.placeholder = translations[lang]['service-placeholder'];
+    }
+
+    const addressLabel = document.querySelector('.address-label');
+    if (addressLabel && translations[lang] && translations[lang]['address-label']) 
+    {
+        addressLabel.textContent = translations[lang]['address-label'];
+    }
+
+    const addressInput = document.querySelector('.address-input');
+    if (addressInput && translations[lang] && translations[lang]['where']) 
+    {
+        addressInput.placeholder = translations[lang]['where'];
+    }
+
+    const searchText = document.querySelector('.search-text');
+    if (searchText && translations[lang] && translations[lang]['search']) 
+    {
+        searchText.textContent = translations[lang]['search'];
+    }
+
+    // Update procedure items
+    const procedureItems = document.querySelectorAll('.block_text');
+    if (procedureItems.length > 0 && translations[lang]) 
+    {
+        const procedureKeys = [
+            'procedure-makeup',
+            'procedure-wellness',
+            'procedure-barber',
+            'procedure-hair',
+            'procedure-massage',
+            'procedure-podiatrist'
+        ];
+
+        procedureItems.forEach((item, index) => {
+            if (procedureKeys[index] && translations[lang][procedureKeys[index]]) 
+            {
+                item.textContent = translations[lang][procedureKeys[index]];
+            }
+        });
+    }
+
+    // Update beautiful section
+    const beautifulTitle = document.querySelector('.beautiful-title');
+    if (beautifulTitle && translations[lang] && translations[lang]['beautiful-title']) 
+    {
+        beautifulTitle.textContent = translations[lang]['beautiful-title'];
+    }
+
+    const beautifulText = document.querySelector('.beautiful-text');
+    if (beautifulText && translations[lang] && translations[lang]['beautiful-text']) 
+    {
+        beautifulText.textContent = translations[lang]['beautiful-text'];
+    }
+
+    // Update recommended section
+    const recommendedText = document.querySelector('.recommended_text');
+    if (recommendedText && translations[lang] && translations[lang]['our-services']) 
+    {
+        recommendedText.textContent = translations[lang]['our-services'];
+    }
+
+    const recommendedTitle = document.querySelector('.recommended-title');
+    if (recommendedTitle && translations[lang] && translations[lang]['recommended']) 
+    {
+        recommendedTitle.textContent = translations[lang]['recommended'];
+    }
+
+    const recommendedDescription = document.querySelector('.recommended-text');
+    if (recommendedDescription && translations[lang] && translations[lang]['beautiful-text']) 
+    {
+        recommendedDescription.textContent = translations[lang]['beautiful-text'];
+    }
+
+    // Update elegance section
+    const eleganceTitle = document.querySelector('.elegance-title');
+    if (eleganceTitle && translations[lang] && translations[lang]['elegance-title']) 
+    {
+        eleganceTitle.textContent = translations[lang]['elegance-title'];
+    }
+
+    const eleganceText = document.querySelector('.elegance-text');
+    if (eleganceText && translations[lang] && translations[lang]['elegance-text']) 
+    {
+        eleganceText.textContent = translations[lang]['elegance-text'];
+    }
+
+    // Update services list
+    const servicesItems = document.querySelectorAll('.elegance_text');
+    if (servicesItems.length > 0 && translations[lang]) 
+    {
+        const servicesKeys = [
+            'makeup',
+            'hair-styling',
+            'nail-care',
+            'cosmetology'
+        ];
+
+        servicesItems.forEach((item, index) => {
+            if (servicesKeys[index] && translations[lang][servicesKeys[index]]) 
+            {
+                item.textContent = translations[lang][servicesKeys[index]];
+            }
+        });
+    }
+
+    // Update newsletter section
+    const newsletterTitle = document.querySelector('.newsletter-title');
+    if (newsletterTitle && translations[lang] && translations[lang]['newsletter-title']) 
+    {
+        newsletterTitle.textContent = translations[lang]['newsletter-title'];
+    }
+
+    const newsletterText = document.querySelector('.newsletter-text');
+    if (newsletterText && translations[lang] && translations[lang]['newsletter-text']) 
+    {
+        newsletterText.textContent = translations[lang]['newsletter-text'];
+    }
+
+    const newsletterInput = document.querySelector('.newsletter-input');
+    if (newsletterInput && translations[lang] && translations[lang]['enter-mail']) 
+    {
+        newsletterInput.placeholder = translations[lang]['enter-mail'];
+    }
+
+    const newsletterButton = document.querySelector('.newsletter-btn');
+    if (newsletterButton && translations[lang] && translations[lang]['subscribe']) 
+    {
+        newsletterButton.textContent = translations[lang]['subscribe'];
+    }
+
+    // Update follow section
+    const followTitle = document.querySelector('.follow-title');
+    if (followTitle && translations[lang] && translations[lang]['follow-title']) 
+    {
+        followTitle.textContent = translations[lang]['follow-title'];
+    }
+
+    const followText = document.querySelector('.follow-text');
+    if (followText && translations[lang] && translations[lang]['follow-text']) 
+    {
+        followText.textContent = translations[lang]['follow-text'];
+    }
+}
+
+// Update about page specific elements
+function updateAboutPage(lang) 
+{
+    const aboutText = document.querySelector('.about-text');
+    if (aboutText && translations[lang] && translations[lang]['short-story']) 
+    {
+        aboutText.textContent = translations[lang]['short-story'];
+    }
+
+    const aboutTitle = document.querySelector('.about-title');
+    if (aboutTitle && translations[lang] && translations[lang]['big-story']) 
+    {
+        aboutTitle.textContent = translations[lang]['big-story'];
+    }
+
+    const aboutBtn = document.querySelector('.about-btn');
+    if (aboutBtn && translations[lang] && translations[lang]['contact-us']) 
+    {
+        aboutBtn.textContent = translations[lang]['contact-us'];
+    }
+
+    const aboutUs = document.querySelector('.consumers_text');
+    if (aboutUs && translations[lang] && translations[lang]['about-us']) 
+    {
+        aboutUs.textContent = translations[lang]['about-us'];
+    }
+
+    const bridgeText = document.querySelector('.consumers-title');
+    if (bridgeText && translations[lang] && translations[lang]['bridge-text']) 
+    {
+        bridgeText.textContent = translations[lang]['bridge-text'];
+    }
+
+    const serviceMarketDesc = document.querySelector('.consumers-text');
+    if (serviceMarketDesc && translations[lang] && translations[lang]['service-market-desc']) 
+    {
+        serviceMarketDesc.textContent = translations[lang]['service-market-desc'];
+    }
+
+    const whatIncludes = document.querySelector('.start_text');
+    if (whatIncludes && translations[lang] && translations[lang]['what-includes']) 
+    {
+        whatIncludes.textContent = translations[lang]['what-includes'];
+    }
+
+    const journeyStart = document.querySelector('.start-title');
+    if (journeyStart && translations[lang] && translations[lang]['journey-start']) 
+    {
+        journeyStart.textContent = translations[lang]['journey-start'];
+    }
+
+    const serviceMarketHistory = document.querySelector('.start-text');
+    if (serviceMarketHistory && translations[lang] && translations[lang]['service-market-history']) 
+    {
+        serviceMarketHistory.textContent = translations[lang]['service-market-history'];
+    }
+
+    const ourMethodology = document.querySelector('.methodology-title');
+    if (ourMethodology && translations[lang] && translations[lang]['our-methodology']) 
+    {
+        ourMethodology.textContent = translations[lang]['our-methodology'];
+    }
+
+    const assessmentTitles = document.querySelectorAll('.assessment-title');
+    if (assessmentTitles.length > 0 && translations[lang]) 
+    {
+        const assessmentKeys = [
+            'assessment-stage',
+            'initialisation-stage',
+            'treatment-stage'
+        ];
+        
+        assessmentTitles.forEach((title, index) => {
+            if (assessmentKeys[index] && translations[lang][assessmentKeys[index]]) 
+            {
+                title.textContent = translations[lang][assessmentKeys[index]];
+            }
+        });
+    }
+
+    const assessmentTexts = document.querySelectorAll('.assessment-text');
+    if (assessmentTexts.length > 0 && translations[lang] && translations[lang]['assessment-text']) 
+    {
+        assessmentTexts.forEach(text => {
+            text.textContent = translations[lang]['assessment-text'];
+        });
+    }
+
+    const stylesTitle = document.querySelector('.styles-title');
+    if (stylesTitle && translations[lang] && translations[lang]['styles-title']) 
+    {
+        stylesTitle.textContent = translations[lang]['styles-title'];
+    }
+
+    const stylesText = document.querySelector('.styles-text');
+    if (stylesText && translations[lang] && translations[lang]['styles-text']) 
+    {
+        stylesText.textContent = translations[lang]['styles-text'];
+    }
+
+    const learnMoreLinks = document.querySelectorAll('.styles-btn');
+    if (learnMoreLinks.length > 0 && translations[lang] && translations[lang]['learn-more']) 
+    {
+        learnMoreLinks.forEach(link => {
+            link.textContent = translations[lang]['learn-more'];
+        });
+    }
+
+    const ourTeam = document.querySelector('.team-title');
+    if (ourTeam && translations[lang] && translations[lang]['our-team']) 
+    {
+        ourTeam.textContent = translations[lang]['our-team'];
+    }
+
+    const meetProfessionals = document.querySelector('.team-text');
+    if (meetProfessionals && translations[lang] && translations[lang]['meet-professionals']) 
+    {
+        meetProfessionals.textContent = translations[lang]['meet-professionals'];
+    }
+
+    // Update team items
+    const teamItems = document.querySelectorAll('.team_title');
+    if (teamItems.length > 0 && translations[lang]) 
+    {
+        const teamKeys = [
+            "team-marianna",
+            "team-tiffany",
+            "team-brianna",
+            "team-jaqueline",
+            "team-wanda",
+            "team-cameron",
+        ];
+
+        teamItems.forEach((item, index) => {
+            if (teamKeys[index] && translations[lang][teamKeys[index]]) 
+            {
+                item.textContent = translations[lang][teamKeys[index]];
+            }
+        });
+    }
+
+    const teamJobs = document.querySelectorAll('.team_text');
+    if (teamJobs.length > 0 && translations[lang] && translations[lang]['hairdresser']) 
+    {
+        teamJobs.forEach(job => {
+            job.textContent = translations[lang]['hairdresser'];
+        });
+    }
+
+    const ourBlog = document.querySelector('.blog-title');
+    if (ourBlog && translations[lang] && translations[lang]['our-blog']) 
+    {
+        ourBlog.textContent = translations[lang]['our-blog'];
+    }
+
+    const latestNews = document.querySelector('.blog-text');
+    if (latestNews && translations[lang] && translations[lang]['latest-news']) 
+    {
+        latestNews.textContent = translations[lang]['latest-news'];
+    }
+
+    // Update blog items
+    const blogItems = document.querySelectorAll('.blog_link');
+    if (blogItems.length > 0 && translations[lang]) 
+    {
+        const blogKeys = [
+            "blog-sap",
+            "blog-nail",
+            "blog-makeup",
+            "blog-casmetology",
+        ];
+
+        blogItems.forEach((item, index) => {
+            if (blogKeys[index] && translations[lang][blogKeys[index]]) 
+            {
+                item.textContent = translations[lang][blogKeys[index]];
+            }
+        });
+    }
+
+    const readMoreLinks = document.querySelectorAll('.blog-read_link');
+    if (readMoreLinks.length > 0 && translations[lang] && translations[lang]['read-more']) {
+        readMoreLinks.forEach(link => {
+            link.textContent = translations[lang]['read-more'];
+        });
+    }
+}
+
+// Update services page specific elements
+function updateServicesPage(lang) 
+{
+    const servicesPrices = document.querySelector('.services-prices');
+    if (servicesPrices && translations[lang] && translations[lang]['services-prices']) 
+    {
+        servicesPrices.textContent = translations[lang]['services-prices'];
+    }
+
+    const servicesDescription = document.querySelector('.services-description');
+    if (servicesDescription && translations[lang] && translations[lang]['services-description']) 
+    {
+        servicesDescription.textContent = translations[lang]['services-description'];
+    }
+
+    const treatmentsPrices = document.querySelector('.treatments-prices');
+    if (treatmentsPrices && translations[lang] && translations[lang]['treatments-prices']) 
+    {
+        treatmentsPrices.textContent = translations[lang]['treatments-prices'];
+    }
+
+    const pricesDescription = document.querySelector('.prices-description');
+    if (pricesDescription && translations[lang] && translations[lang]['prices-description']) 
+    {
+        pricesDescription.textContent = translations[lang]['prices-description'];
+    }
+
+    const makeUp = document.querySelector('.make-up');
+    if (makeUp && translations[lang] && translations[lang]['make-up']) 
+    {
+        makeUp.textContent = translations[lang]['make-up'];
+    }
+
+    const makeUpDesc = document.querySelector('.make-up-desc');
+    if (makeUpDesc && translations[lang] && translations[lang]['make-up-desc']) 
+    {
+        makeUpDesc.textContent = translations[lang]['make-up-desc'];
+    }
+
+    // Update make-up services
+    const makeUpServices = document.querySelectorAll('.make-up-service');
+    if (makeUpServices.length > 0 && translations[lang]) 
+    {
+        const makeUpKeys = [
+            'daily-makeup',
+            'night-makeup',
+            'bridal-makeup',
+            'ocassion-makeup',
+            'television-makeup'
+        ];
+
+        makeUpServices.forEach((service, index) => {
+            if (makeUpKeys[index] && translations[lang][makeUpKeys[index]]) 
+            {
+                service.textContent = translations[lang][makeUpKeys[index]];
+            }
+        });
+    }
+
+    const spaProcedures = document.querySelector('.spa-procedures');
+    if (spaProcedures && translations[lang] && translations[lang]['spa-procedures']) 
+    {
+        spaProcedures.textContent = translations[lang]['spa-procedures'];
+    }
+
+    const spaDesc = document.querySelector('.spa-desc');
+    if (spaDesc && translations[lang] && translations[lang]['spa-desc']) 
+    {
+        spaDesc.textContent = translations[lang]['spa-desc'];
+    }
+
+    // Update spa services
+    const spaServices = document.querySelectorAll('.spa-service');
+    if (spaServices.length > 0 && translations[lang]) 
+    {
+        const spaKeys = [
+            'body-scrub',
+            'indulge-relax',
+            'slimming-drainage',
+            'aromatherapy',
+            'foot-revive'
+        ];
+
+        spaServices.forEach((service, index) => {
+            if (spaKeys[index] && translations[lang][spaKeys[index]]) 
+            {
+                service.textContent = translations[lang][spaKeys[index]];
+            }
+        });
+    }
+
+    const beautySalon = document.querySelector('.beauty-salon');
+    if (beautySalon && translations[lang] && translations[lang]['beauty-salon']) 
+    {
+        beautySalon.textContent = translations[lang]['beauty-salon'];
+    }
+
+    const bookAppointment = document.querySelector('.book-appointment');
+    if (bookAppointment && translations[lang] && translations[lang]['book-appointment']) 
+    {
+        bookAppointment.textContent = translations[lang]['book-appointment'];
+    }
+
+    const bookDescription = document.querySelector('.book-description');
+    if (bookDescription && translations[lang] && translations[lang]['book-description']) 
+    {
+        bookDescription.textContent = translations[lang]['book-description'];
+    }
+
+    // Update form labels
+    const firstNameLabel = document.querySelector('.first-name-label');
+    if (firstNameLabel && translations[lang] && translations[lang]['first-name']) 
+    {
+        firstNameLabel.textContent = translations[lang]['first-name'];
+    }
+
+    const lastNameLabel = document.querySelector('.last-name-label');
+    if (lastNameLabel && translations[lang] && translations[lang]['last-name']) 
+    {
+        lastNameLabel.textContent = translations[lang]['last-name'];
+    }
+
+    const emailLabel = document.querySelector('.email-label');
+    if (emailLabel && translations[lang] && translations[lang]['email']) 
+    {
+        emailLabel.textContent = translations[lang]['email'];
+    }
+
+    const phoneLabel = document.querySelector('.phone-label');
+    if (phoneLabel && translations[lang] && translations[lang]['phone-number']) 
+    {
+        phoneLabel.textContent = translations[lang]['phone-number'];
+    }
+
+    const dateLabel = document.querySelector('.date-label');
+    if (dateLabel && translations[lang] && translations[lang]['date']) 
+    {
+        dateLabel.textContent = translations[lang]['date'];
+    }
+
+    const timeLabel = document.querySelector('.time-label');
+    if (timeLabel && translations[lang] && translations[lang]['time']) 
+    {
+        timeLabel.textContent = translations[lang]['time'];
+    }
+
+    const serviceLabel = document.querySelector('.service-label');
+    if (serviceLabel && translations[lang] && translations[lang]['service']) 
+    {
+        serviceLabel.textContent = translations[lang]['service'];
+    }
+}
+
+// Update contact page specific elements
+function updateContactPage(lang) 
+{
+    const getInTouch = document.querySelector('.get-in-touch');
+    if (getInTouch && translations[lang] && translations[lang]['get-in-touch']) 
+    {
+        getInTouch.textContent = translations[lang]['get-in-touch'];
+    }
+
+    const helpYou = document.querySelector('.help-you');
+    if (helpYou && translations[lang] && translations[lang]['help-you']) 
+    {
+        helpYou.textContent = translations[lang]['help-you'];
+    }
+
+    const contactDescription = document.querySelector('.contact-description');
+    if (contactDescription && translations[lang] && translations[lang]['contact-description']) 
+    {
+        contactDescription.textContent = translations[lang]['contact-description'];
+    }
+
+    const visitUs = document.querySelector('.visit-us');
+    if (visitUs && translations[lang] && translations[lang]['visit-us']) 
+    {
+        visitUs.textContent = translations[lang]['visit-us'];
+    }
+
+    const dropUs = document.querySelector('.drop-us');
+    if (dropUs && translations[lang] && translations[lang]['drop-us']) 
+    {
+        dropUs.textContent = translations[lang]['drop-us'];
+    }
+
+    const callUs = document.querySelector('.call-us');
+    if (callUs && translations[lang] && translations[lang]['call-us']) 
+    {
+        callUs.textContent = translations[lang]['call-us'];
+    }
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function () 
+{
+    // Check for saved language preference
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+    // Set the language selector to saved language
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) 
+    {
+        languageSelect.value = savedLanguage;
+
+        // Add event listener for language change
+        languageSelect.addEventListener('change', function () 
+        {
+            changeLanguage(this.value);
+        });
+    }
+
+    // Apply the saved language
+    changeLanguage(savedLanguage);
 });
+
+// Expose the changeLanguage function to the global scope
+window.changeLanguage = changeLanguage;
