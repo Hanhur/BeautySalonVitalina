@@ -505,51 +505,23 @@ function updateServicesPage(lang) {
     const elements = document.querySelectorAll('[data]');
     elements.forEach(el => {
         const key = el.getAttribute('data');
-        if (translations[lang] && translations[lang][key]) 
-        {
+        if (translations[lang] && translations[lang][key]) {
             el.textContent = translations[lang][key];
         }
     });
 
-    const spaProcedures = document.querySelector('.spa-procedures');
-    if (spaProcedures && translations[lang] && translations[lang]['spa-procedures']) {
-        spaProcedures.textContent = translations[lang]['spa-procedures'];
-    }
 
-    const spaDesc = document.querySelector('.spa-desc');
-    if (spaDesc && translations[lang] && translations[lang]['spa-desc']) {
-        spaDesc.textContent = translations[lang]['spa-desc'];
-    }
-
-    // Update spa services
-    const spaServices = document.querySelectorAll('.spa-service');
-    if (spaServices.length > 0 && translations[lang]) {
-        const spaKeys = [
-            'body-scrub',
-            'indulge-relax',
-            'slimming-drainage',
-            'aromatherapy',
-            'foot-revive'
-        ];
-
-        spaServices.forEach((service, index) => {
-            if (spaKeys[index] && translations[lang][spaKeys[index]]) {
-                service.textContent = translations[lang][spaKeys[index]];
-            }
-        });
-    }
-
-    const beautySalon = document.querySelector('.beauty-salon');
+    const beautySalon = document.querySelector('.book_text');
     if (beautySalon && translations[lang] && translations[lang]['beauty-salon']) {
         beautySalon.textContent = translations[lang]['beauty-salon'];
     }
 
-    const bookAppointment = document.querySelector('.book-appointment');
+    const bookAppointment = document.querySelector('.book-title');
     if (bookAppointment && translations[lang] && translations[lang]['book-appointment']) {
         bookAppointment.textContent = translations[lang]['book-appointment'];
     }
 
-    const bookDescription = document.querySelector('.book-description');
+    const bookDescription = document.querySelector('.book-text');
     if (bookDescription && translations[lang] && translations[lang]['book-description']) {
         bookDescription.textContent = translations[lang]['book-description'];
     }
@@ -571,8 +543,8 @@ function updateServicesPage(lang) {
     }
 
     const phoneLabel = document.querySelector('.phone-label');
-    if (phoneLabel && translations[lang] && translations[lang]['phone-number']) {
-        phoneLabel.textContent = translations[lang]['phone-number'];
+    if (phoneLabel && translations[lang] && translations[lang]['phone']) {
+        phoneLabel.textContent = translations[lang]['phone'];
     }
 
     const dateLabel = document.querySelector('.date-label');
@@ -589,6 +561,30 @@ function updateServicesPage(lang) {
     if (serviceLabel && translations[lang] && translations[lang]['service']) {
         serviceLabel.textContent = translations[lang]['service'];
     }
+
+    // Update labels
+    document.querySelectorAll('.book-label, .book_label').forEach(label => {
+        const originalText = label.textContent;
+        if (translations[lang][originalText]) {
+            label.textContent = translations[lang][originalText];
+        }
+    });
+
+    // Update button text
+    document.querySelectorAll('.book-btn').forEach(button => {
+        const originalText = button.textContent;
+        if (translations[lang][originalText]) {
+            button.textContent = translations[lang][originalText];
+        }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('.book-input, .book_input').forEach(input => {
+        const placeholder = input.getAttribute('placeholder');
+        if (placeholder && translations[lang][`placeholder_${placeholder}`]) {
+            input.setAttribute('placeholder', translations[lang][`placeholder_${placeholder}`]);
+        }
+    });
 }
 
 // Update contact page specific elements
