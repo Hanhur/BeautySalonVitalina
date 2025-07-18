@@ -2,6 +2,8 @@
 export const translations = {
     en: {
         // Common translations (shared across all pages)
+        "salon": "Beauty Salon",
+        "name": "Vitalina",
         "home": "Home",
         "about": "About Us",
         "services": "Services",
@@ -182,6 +184,8 @@ export const translations = {
     },
     ua: {
         // Common translations (shared across all pages)
+        "salon": "Салон краси",
+        "name": "Віталіна",
         "home": "Головна",
         "about": "Про нас",
         "services": "Послуги",
@@ -359,6 +363,8 @@ export const translations = {
     },
     cz: {
         // Common translations (shared across all pages)
+        "salon": "Kosmetický salon",
+        "name": "Vitalina",
         "home": "Domů",
         "about": "O nás",
         "services": "Služby",

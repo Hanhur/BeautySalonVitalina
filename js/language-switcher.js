@@ -6,6 +6,12 @@ function changeLanguage(lang) {
     // Set the selected language in localStorage
     localStorage.setItem('selectedLanguage', lang);
 
+    const logoTextElement = document.querySelector('.header-logo_text.salon');
+    if (logoTextElement && translations[lang]) {
+        // Обновляем текст с учетом выбранного языка
+        logoTextElement.innerHTML = `${translations[lang].salon} <span>${translations[lang].name}</span>`;
+    }
+
     // Update the language selector
     const languageSelect = document.getElementById('language-select');
     if (languageSelect) {
