@@ -135,7 +135,7 @@ export const translations = {
 
         "beauty-salon": "Beauty salon",
         "book-appointment": "Book appointment",
-        "description": "Mi senectus ac ullamcorper sollicitudin volutpat sit a velit. Purus scelerisque",
+        "bookDescription": "Mi senectus ac ullamcorper sollicitudin volutpat sit a velit. Purus scelerisque",
         "first-name": "First name",
         "last-name": "Last name",
         "email": "Email",
@@ -156,12 +156,29 @@ export const translations = {
     
         
         // Contact page translations
-        "get-in-touch": "Get in Touch!",
-        "help-you": "We are here to help you always...",
-        "contact-description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, buying to many desktop publishing packages.",
-        "visit-us": "Visit Us:",
-        "drop-us": "Drop Us:",
-        "call-us": "Call Us:"
+        "getInTouch": "Get in Touch!",
+        "weAreHere": "We are here to help you always...",
+        "contactDescription": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, buying to many desktop publishing packages.",
+        "visitUs": "Visit Us:",
+        "dropUs": "Drop Us:",
+        "callUs": "Call Us:",
+
+        // Booking Section
+        "beautySalon": "Beauty salon",
+        "bookAppointment": "Book appointment",
+        "bookDescription": "Mi senectus ac ullamcorper sollicitudin volutpat sit a velit. Purus scelerisque",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "phone": "Phone",
+        "date": "Date",
+        "time": "Time",
+        "service": "Service",
+        "sendMessage": "Send message",
+
+        // Instagram Section
+        "followInstagram": "Follow our Instagram",
+        "followDescription": "Viverra nulla amet a ultrices massa dui. Tortor est purus morbi vitae arcu suspendisse amet.",
     },
     ua: {
         // Common translations (shared across all pages)
@@ -295,7 +312,7 @@ export const translations = {
 
         "beauty-salon": "Салон краси",
         "book-appointment": "Записатися на прийом",
-        "description": "Mi senectus ac ullamcorper sollicitudin volutpat sit a velit. Purus scelerisque",
+        "bookDescription": "Ми завжди раді новим клієнтам та готові надати якісні послуги.",
         "first-name": "Ім'я",
         "last-name": "Прізвище",
         "email": "Електронна пошта",
@@ -316,12 +333,29 @@ export const translations = {
 
         
         // Contact page translations
-        "get-in-touch": "Зв'яжіться з нами!",
-        "help-you": "Ми завжди готові вам допомогти...",
-        "contact-description": "Існує багато варіацій уривків Lorem Ipsum, але більшість з них зазнала певних змін, купуючи багато настільних видавничих пакетів.",
-        "visit-us": "Відвідайте нас:",
-        "drop-us": "Напишіть нам:",
-        "call-us": "Подзвоніть нам:"
+        "getInTouch": "Зв'яжіться з нами!",
+        "weAreHere": "Ми завжди готові вам допомогти...",
+        "contactDescription": "Існує багато варіацій уривків з Lorem Ipsum, але більшість з них зазнала певних змін у різних формах.",
+        "visitUs": "Наша адреса:",
+        "dropUs": "Напишіть нам:",
+        "callUs": "Подзвоніть нам:",
+
+        // Booking Section
+        "beautySalon": "Салон краси",
+        "bookAppointment": "Записатися",
+        "bookDescription": "Ми завжди раді новим клієнтам та готові надати якісні послуги.",
+        "firstName": "Ім'я",
+        "lastName": "Прізвище",
+        "email": "Електронна пошта",
+        "phone": "Телефон",
+        "date": "Дата",
+        "time": "Час",
+        "service": "Послуга",
+        "sendMessage": "Надіслати",
+
+        // Instagram Section
+        "followInstagram": "Слідкуйте за нами в Instagram",
+        "followDescription": "Підписуйтесь на наш Instagram, щоб бути в курсі всіх подій та акцій.",
     },
     cz: {
         // Common translations (shared across all pages)
@@ -476,11 +510,28 @@ export const translations = {
 
         
         // Contact page translations
-        "get-in-touch": "Kontaktujte nás!",
-        "help-you": "Jsme tu, abychom vám vždy pomohli...",
-        "contact-description": "Existuje mnoho variant pasáží Lorem Ipsum, ale většina z nich prošla nějakou změnou, kupováním mnoha desktopových publikačních balíčků.",
-        "visit-us": "Navštivte nás:",
-        "drop-us": "Napište nám:",
-        "call-us": "Zavolejte nám:"
+        "getInTouch": "Kontaktujte nás!",
+        "weAreHere": "Jsme tu, abychom vám vždy pomohli...",
+        "contactDescription": "Existuje mnoho variant pasáží Lorem Ipsum, ale většina z nich prošla různými změnami.",
+        "visitUs": "Navštivte nás:",
+        "dropUs": "Napište nám:",
+        "callUs": "Zavolejte nám:",
+
+        // Booking Section
+        "beautySalon": "Kadeřnictví",
+        "bookAppointment": "Rezervace",
+        "bookDescription": "Jsme vždy připraveni poskytnout kvalitní služby a péči.",
+        "firstName": "Jméno",
+        "lastName": "Příjmení",
+        "email": "Email",
+        "phone": "Telefon",
+        "date": "Datum",
+        "time": "Čas",
+        "service": "Služba",
+        "sendMessage": "Odeslat",
+
+        // Instagram Section
+        "followInstagram": "Sledujte nás na Instagramu",
+        "followDescription": "Sledujte náš Instagram a buďte v obraze o všech novinkách a akcích.",
     }
 };

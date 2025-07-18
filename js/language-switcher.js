@@ -522,8 +522,8 @@ function updateServicesPage(lang) {
     }
 
     const bookDescription = document.querySelector('.book-text');
-    if (bookDescription && translations[lang] && translations[lang]['book-description']) {
-        bookDescription.textContent = translations[lang]['book-description'];
+    if (bookDescription && translations[lang] && translations[lang]['bookDescription']) {
+        bookDescription.textContent = translations[lang]['bookDescription'];
     }
 
     // Update form labels
@@ -589,34 +589,119 @@ function updateServicesPage(lang) {
 
 // Update contact page specific elements
 function updateContactPage(lang) {
-    const getInTouch = document.querySelector('.get-in-touch');
-    if (getInTouch && translations[lang] && translations[lang]['get-in-touch']) {
-        getInTouch.textContent = translations[lang]['get-in-touch'];
+    const langData = translations[lang];
+
+    // Update elements with data attributes
+    document.querySelectorAll('[data]').forEach(element => {
+        const key = element.getAttribute('data');
+        if (langData[key]) {
+            element.textContent = langData[key];
+        }
+    });
+
+    // Update contact section
+    const contactElements = {
+        '.contact_text': 'getInTouch',
+        '.contact-title': 'weAreHere',
+        '.contact-text': 'contactDescription',
+        '.contact__text:first-of-type': 'visitUs',
+        '.contact__text:nth-of-type(2)': 'dropUs',
+        '.contact__text:last-of-type': 'callUs'
+    };
+
+    for (const selector in contactElements) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.textContent = langData[contactElements[selector]];
+        }
     }
 
-    const helpYou = document.querySelector('.help-you');
-    if (helpYou && translations[lang] && translations[lang]['help-you']) {
-        helpYou.textContent = translations[lang]['help-you'];
+    const beautySalon = document.querySelector('.book_text');
+    if (beautySalon && translations[lang] && translations[lang]['beauty-salon']) {
+        beautySalon.textContent = translations[lang]['beauty-salon'];
     }
 
-    const contactDescription = document.querySelector('.contact-description');
-    if (contactDescription && translations[lang] && translations[lang]['contact-description']) {
-        contactDescription.textContent = translations[lang]['contact-description'];
+    const bookAppointment = document.querySelector('.book-title');
+    if (bookAppointment && translations[lang] && translations[lang]['book-appointment']) {
+        bookAppointment.textContent = translations[lang]['book-appointment'];
     }
 
-    const visitUs = document.querySelector('.visit-us');
-    if (visitUs && translations[lang] && translations[lang]['visit-us']) {
-        visitUs.textContent = translations[lang]['visit-us'];
+    const bookDescription = document.querySelector('.book-text');
+    if (bookDescription && translations[lang] && translations[lang]['bookDescription']) {
+        bookDescription.textContent = translations[lang]['bookDescription'];
     }
 
-    const dropUs = document.querySelector('.drop-us');
-    if (dropUs && translations[lang] && translations[lang]['drop-us']) {
-        dropUs.textContent = translations[lang]['drop-us'];
+    // Update form labels
+    const firstNameLabel = document.querySelector('.first-name-label');
+    if (firstNameLabel && translations[lang] && translations[lang]['first-name']) {
+        firstNameLabel.textContent = translations[lang]['first-name'];
     }
 
-    const callUs = document.querySelector('.call-us');
-    if (callUs && translations[lang] && translations[lang]['call-us']) {
-        callUs.textContent = translations[lang]['call-us'];
+    const lastNameLabel = document.querySelector('.last-name-label');
+    if (lastNameLabel && translations[lang] && translations[lang]['last-name']) {
+        lastNameLabel.textContent = translations[lang]['last-name'];
+    }
+
+    const emailLabel = document.querySelector('.email-label');
+    if (emailLabel && translations[lang] && translations[lang]['email']) {
+        emailLabel.textContent = translations[lang]['email'];
+    }
+
+    const phoneLabel = document.querySelector('.phone-label');
+    if (phoneLabel && translations[lang] && translations[lang]['phone']) {
+        phoneLabel.textContent = translations[lang]['phone'];
+    }
+
+    const dateLabel = document.querySelector('.date-label');
+    if (dateLabel && translations[lang] && translations[lang]['date']) {
+        dateLabel.textContent = translations[lang]['date'];
+    }
+
+    const timeLabel = document.querySelector('.time-label');
+    if (timeLabel && translations[lang] && translations[lang]['time']) {
+        timeLabel.textContent = translations[lang]['time'];
+    }
+
+    const serviceLabel = document.querySelector('.service-label');
+    if (serviceLabel && translations[lang] && translations[lang]['service']) {
+        serviceLabel.textContent = translations[lang]['service'];
+    }
+
+    // Update labels
+    document.querySelectorAll('.book-label, .book_label').forEach(label => {
+        const originalText = label.textContent;
+        if (translations[lang][originalText]) {
+            label.textContent = translations[lang][originalText];
+        }
+    });
+
+    // Update button text
+    document.querySelectorAll('.book-btn').forEach(button => {
+        const originalText = button.textContent;
+        if (translations[lang][originalText]) {
+            button.textContent = translations[lang][originalText];
+        }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('.book-input, .book_input').forEach(input => {
+        const placeholder = input.getAttribute('placeholder');
+        if (placeholder && translations[lang][`placeholder_${placeholder}`]) {
+            input.setAttribute('placeholder', translations[lang][`placeholder_${placeholder}`]);
+        }
+    });
+    
+    // Update follow section
+    const followElements = {
+        '.follow-title': 'followInstagram',
+        '.follow-text': 'followDescription'
+    };
+
+    for (const selector in followElements) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.textContent = langData[followElements[selector]];
+        }
     }
 }
 
