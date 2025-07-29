@@ -120,44 +120,45 @@
                         <p class="book_text">Beauty salon</p>
                         <h2 class="book-title title">Book appointment</h2>
                         <p class="book-text">Mi senectus ac ullamcorper sollicitudin volutpat sit a velit. Purus scelerisque</p>
-                        <form class="book-form">
+                        <form id="appointmentForm" class="book-form">
                             <ul class="book-list">
                                 <li class="book-item">
                                     <label class="book-label first-name-label">First name</label>
-                                    <input class="book-input" type="text" placeholder="First name">
+                                    <input id="firstName" class="book-input" type="text" placeholder="First name">
                                 </li>
                                 <li class="book-item">
                                     <label class="book-label last-name-label">Last name</label>
-                                    <input class="book-input" type="text" placeholder="Last name">
+                                    <input id="lastName" class="book-input" type="text" placeholder="Last name">
                                 </li>
                                  <li class="book-item">
                                     <label class="book-label email-label">Email</label>
-                                    <input class="book-input" type="text" placeholder="Email">
+                                    <input id="email" class="book-input" type="text" placeholder="Email">
                                 </li>
                                 <li class="book-item">
                                     <label class="book-label phone-label">Phone</label>
-                                    <input class="book-input" type="text" placeholder="Phone">
+                                    <input id="phone" class="book-input" type="text" placeholder="Phone">
                                 </li>
                                  <li class="book-item">
                                     <label class="book-label date-label">Date</label>
-                                    <input class="book-input" type="date" placeholder="Date">
+                                    <input id="date" class="book-input" type="date" placeholder="Date">
                                 </li>
                                 <li class="book-item">
                                     <label class="book-label time-label">Time</label>
-                                    <input class="book-input" type="time" placeholder="Time">
+                                    <input id="time" class="book-input" type="time" placeholder="Time">
                                 </li>
                             </ul>
                             <ul class="book-list">
                                 <li class="book_item">
                                     <label class="book_label service-label">Service</label>
                                     <a class="book_box" href="#">
-                                        <input class="book_input" type="text" placeholder="Service">
+                                        <input id="service" class="book_input" type="text" placeholder="Service">
                                         <img class="book-input_img" src="./images/down.svg" alt="">
                                     </a>
                                     <button class="book-btn" type="submit">Send message</button>
                                 </li>
                             </ul>
                         </form>
+                        <div id="response" class="response-message"></div>
                     </div>
                 </div>
             </div>
@@ -307,5 +308,6 @@
     </footer>
 
     <script type="module" src="./js/language-switcher.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>
