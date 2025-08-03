@@ -4,3 +4,5 @@ psycopg2-binary==2.9.6
 python-dotenv==1.0.0
 cryptography==41.0.2
 SQLAlchemy==2.0.0
+requests==2.26.0
+python-telegram-bot==13.7
