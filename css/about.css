@@ -58,7 +58,7 @@
     font-size: 15px;
     font-weight: 600;
     color: var(--SecondaryColor);
-    width: 205px;
+    width: 215px;
     margin-bottom: 8px;
 }
 .about-title
@@ -112,14 +112,14 @@
     font-size: 45px;
     font-weight: 700;
     color: var(--WhiteColor);
-    width: 460px;
+    width: 600px;
     margin-bottom: 14px;
 }
 .consumers-text
 {
     line-height: 1.5;
     color: var(--WhiteColor);
-    width: 508px;
+    width: 555px;
 }
 /* =============================================== Start ===================================== */
 .section-start
@@ -340,6 +340,7 @@
     color: var(--GrayColor);
     width: 88px;
     margin-bottom: 12px;
+    text-align: center;
 }
 .team_list
 {

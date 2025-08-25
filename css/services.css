@@ -178,8 +178,8 @@
     font-weight: 500;
     color: var(--MainColor);
     text-transform: uppercase;
-    width: 123px;
-    margin-bottom: 24px;
+    width: 165px;
+    margin-bottom: 20px;
 }
 .book-title
 {
@@ -210,7 +210,6 @@
     font-size: 16px;
     color: var(--DarkColor);
     margin-bottom: 6px;
-    width: 100px;
 }
 .book-input
 {

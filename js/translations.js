@@ -209,7 +209,7 @@ export const translations = {
         // Index page translations
         "service-text": "Салон краси, масаж, косметологія",
         "service-title": "Знайдіть послугу поблизу вас",
-        "service-description": "Існує багато варіацій уривків Lorem Ipsum, але більшість з них зазнала певних змін.",
+        "service-description": "Існує багато варіацій уривків, але більшість з них зазнала певних змін.",
         "service-name": "Назва послуги",
         "service-placeholder": "Забронюйте послуги...",
         "address-label": "Адреса",
@@ -227,10 +227,13 @@ export const translations = {
         "recommended": "Рекомендовані",
         "elegance-title": "Елегантність походить від того, що ви такі ж красиві всередині, як і зовні",
         "elegance-text": "Eleifend arcu non lorem justo in tempus purus gravida. Est tortor egestas sed feugiat elementum. Viverra nulla amet a ultrices massa dui. Tortor est purus morbi vitae arcu suspendisse amet.",
+        
         "makeup": "Макіяж",
         "hair-styling": "Укладка волосся",
         "nail-care": "Догляд за нігтями",
         "cosmetology": "Косметологія",
+        "spa-procedures": "СПА-процедури",
+        
         "newsletter-title": "Підпишіться на розсилку",
         "newsletter-text": "Підпишіться на нашу розсилку, щоб бути в курсі останніх акцій, знижок і нових функцій.",
         "enter-mail": "Введіть вашу пошту",
@@ -339,7 +342,7 @@ export const translations = {
         // Contact page translations
         "getInTouch": "Зв'яжіться з нами!",
         "weAreHere": "Ми завжди готові вам допомогти...",
-        "contactDescription": "Існує багато варіацій уривків з Lorem Ipsum, але більшість з них зазнала певних змін у різних формах.",
+        "contactDescription": "Існує багато варіацій уривків, але більшість з них зазнала певних змін у різних формах.",
         "visitUs": "Наша адреса:",
         "dropUs": "Напишіть нам:",
         "callUs": "Подзвоніть нам:",
@@ -388,7 +391,7 @@ export const translations = {
         // Index page translations
         "service-text": "Kadeřnictví, Masáže, Kosmetický salon",
         "service-title": "Najděte službu ve vašem okolí",
-        "service-description": "Existuje mnoho variant pasáží Lorem Ipsum, ale většina z nich prošla nějakou změnou.",
+        "service-description": "Existuje mnoho variant pasáží, ale většina z nich prošla nějakou změnou.",
         "service-name": "Název služby",
         "service-placeholder": "Rezervujte si služby...",
         "address-label": "Adresa",
@@ -518,7 +521,7 @@ export const translations = {
         // Contact page translations
         "getInTouch": "Kontaktujte nás!",
         "weAreHere": "Jsme tu, abychom vám vždy pomohli...",
-        "contactDescription": "Existuje mnoho variant pasáží Lorem Ipsum, ale většina z nich prošla různými změnami.",
+        "contactDescription": "Existuje mnoho variant pasáží, ale většina z nich prošla různými změnami.",
         "visitUs": "Navštivte nás:",
         "dropUs": "Napište nám:",
         "callUs": "Zavolejte nám:",
