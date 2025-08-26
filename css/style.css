@@ -507,15 +507,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 .elegance-box
 {
     position: relative;
 }
 .elegance-img {
-    width: 370px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -525,8 +524,8 @@ body {
 .elegance {
     display: flex;
     align-items: center;
-    gap: 0 20px;
-    padding: 20px;
+    gap: 0 24px;
+    padding: 24px;
     position: absolute;
     bottom: 0;
 }
@@ -535,7 +534,7 @@ body {
     font-size: 30px;
     font-weight: 700;
     color: var(--WhiteColor);
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 /* ==================================== Subscribe ===================================== */
 .section-newsletter {
@@ -1002,12 +1001,6 @@ body.language-changing {
     {
         padding: 0;
     }
-    .elegance-block
-    {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-    }
 }
 @media screen and (max-width: 1000px)
 {
@@ -1443,14 +1436,6 @@ body.language-changing {
         width: 500px;
     }
 }
-@media screen and (max-width: 650px)
-{
-    .elegance-block
-    {
-        display: flex;
-        flex-direction: column;
-    }
-}
 @media screen and (max-width: 580px)
 {
     .beautiful-title
@@ -1458,8 +1443,12 @@ body.language-changing {
         font-size: 30px;
         width: 500px;
     }
+    .elegance-title
+    {
+        font-size: 30px;
+        width: 370px;
+    }
     .newsletter-title,
-    .elegance-title,
     .follow-title,
     .team-title
     {
@@ -1472,7 +1461,6 @@ body.language-changing {
         text-align: center;
     }
     .recommended-text,
-    .elegance-text,
     .newsletter-text,
     .follow-text,
     .services-text
@@ -1532,7 +1520,6 @@ body.language-changing {
     .prices-text,
     .newsletter-text,
     .recommended-text,
-    .elegance-text,
     .follow-text
     {
         width: 350px;
@@ -1611,7 +1598,6 @@ body.language-changing {
     {
         margin-right: 0;
     }
-    .elegance-title,
     .team-title
     {
         font-size: 20px;
@@ -1620,7 +1606,6 @@ body.language-changing {
     .prices-text,
     .newsletter-text,
     .recommended-text,
-    .elegance-text,
     .follow-text
     {
         font-size: 15px;
@@ -1678,9 +1663,13 @@ body.language-changing {
     {
         padding: 170px 50px 25px 25px;
     }
-    .title 
+    .elegance-title
     {
         font-size: 25px;
+    }
+    .elegance-text
+    {
+        font-size: 15px;
     }
     .footer-address_item
     {
@@ -1822,11 +1811,11 @@ body.language-changing {
     {
         padding: 200px 5px 25px 5px;
     }
-    .title 
+    .elegance-title
     {
         font-size: 20px;
+        width: 270px;
     }
-    .elegance-title,
     .follow-title,
     .about-title,
     .start-title,
@@ -1835,7 +1824,6 @@ body.language-changing {
         font-size: 20px;
         width: 300px;
     }
-    .elegance-text,
     .newsletter-text,
     .follow-text,
     .services-text,
@@ -1976,6 +1964,28 @@ body.language-changing {
     {
         font-size: 20px;
     }
+    .elegance-img
+    {
+        width: 100%;
+    }
+    .elegance-title
+    {
+        font-size: 17px;
+        width: 250px;
+    }
+    .elegance-text
+    {
+        font-size: 13px;
+        width: 250px;
+    }
+    .elegance
+    {
+        gap: 0 20px;
+    }
+    .elegance_text
+    {
+        font-size: 25px;
+    }
 }
 @media screen and (max-width: 320px)
 {
@@ -2052,7 +2062,6 @@ body.language-changing {
     {
         font-size: 14px;
     }
-    .elegance-title,
     .newsletter-title,
     .follow-title,
     .start-title,
@@ -2068,15 +2077,6 @@ body.language-changing {
     .contact-text
     {
         width: 200px;
-    }
-    .elegance
-    {
-        padding: 15px;
-        gap: 0 15px;
-    }
-    .elegance_text
-    {
-        font-size: 22px;
     }
     .newsletter-form
     {
@@ -2155,5 +2155,9 @@ body.language-changing {
     .book-inner
     {
         width: 250px;
+    }
+    .elegance_text
+    {
+        font-size: 20px;
     }
 }
