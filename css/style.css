@@ -563,6 +563,7 @@ body {
     color: var(--GrayColor);
     width: 480px;
     margin-bottom: 46px;
+    text-align: center;
 }
 .newsletter-form {
     display: flex;
@@ -1240,6 +1241,8 @@ body.language-changing {
     .title 
     {
         font-size: 35px;
+        text-align: center;
+        width: 500px;
     }
     .beautiful-title,
     .elegance-title,
@@ -1250,7 +1253,8 @@ body.language-changing {
     }
     .elegance-text,
     .follow-text,
-    .services-text
+    .services-text,
+    .newsletter-text
     {
         width: 100%;
     }
@@ -1443,17 +1447,16 @@ body.language-changing {
         font-size: 30px;
         width: 500px;
     }
-    .elegance-title
+    .elegance-title,
+    .newsletter-title,
+    .follow-title
     {
         font-size: 30px;
         width: 370px;
     }
-    .newsletter-title,
-    .follow-title,
     .team-title
     {
-        font-size: 25px;
-        width: 300px;
+        width: 370px;
     }
     .newsletter-title,
     .newsletter-text
@@ -1461,7 +1464,6 @@ body.language-changing {
         text-align: center;
     }
     .recommended-text,
-    .newsletter-text,
     .follow-text,
     .services-text
     {
@@ -1560,11 +1562,13 @@ body.language-changing {
 }
 @media screen and (max-width: 520px)
 {
-    .header-logo_text
+    .header-logo_text,
+    .footer-logo_text
     {
         font-size: 25px;
     }
-    .beautiful-title
+    .beautiful-title,
+    .recommended-title
     {
         font-size: 25px;
         width: 400px;
@@ -1605,8 +1609,7 @@ body.language-changing {
     }
     .prices-text,
     .newsletter-text,
-    .recommended-text,
-    .follow-text
+    .recommended-text
     {
         font-size: 15px;
         width: 300px;
@@ -1663,7 +1666,8 @@ body.language-changing {
     {
         padding: 170px 50px 25px 25px;
     }
-    .elegance-title
+    .elegance-title,
+    .newsletter-title
     {
         font-size: 25px;
     }
@@ -1673,7 +1677,6 @@ body.language-changing {
     }
     .footer-address_item
     {
-        display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: center;
@@ -1693,7 +1696,8 @@ body.language-changing {
     .services-title,
     .prices-title,
     .prices_title,
-    .contact-title
+    .contact-title,
+    .recommended-title
     {
         width: 250px;
     }
@@ -1811,7 +1815,8 @@ body.language-changing {
     {
         padding: 200px 5px 25px 5px;
     }
-    .elegance-title
+    .elegance-title,
+    .newsletter-title
     {
         font-size: 20px;
         width: 270px;
@@ -1943,6 +1948,21 @@ body.language-changing {
     {
         font-size: 15px;
     }
+    .footer-block
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .item-3,
+    .footer-address_item
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 @media screen and (max-width: 370px)
 {
@@ -1964,6 +1984,10 @@ body.language-changing {
     {
         font-size: 20px;
     }
+    .header_list
+    {
+        gap: 0 20px;
+    }
     .elegance-img
     {
         width: 100%;
@@ -1973,7 +1997,8 @@ body.language-changing {
         font-size: 17px;
         width: 250px;
     }
-    .elegance-text
+    .elegance-text,
+    .newsletter-text
     {
         font-size: 13px;
         width: 250px;
@@ -2072,7 +2097,6 @@ body.language-changing {
     }
     .recommended-text,
     .newsletter-text,
-    .follow-text,
     .book-text,
     .contact-text
     {
@@ -2086,21 +2110,6 @@ body.language-changing {
     .newsletter-input
     {
         font-size: 75%;
-    }
-    .footer-block
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .item-3,
-    .footer-address_item
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
     }
     .consumers-img
     {
