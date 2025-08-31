@@ -717,7 +717,8 @@ body.language-changing {
     {
         padding: 300px 300px 203px 100px;
     }
-    .start-title
+    .start-title,
+    .about-title
     {
         font-size: 35px;
     }
@@ -825,13 +826,9 @@ body.language-changing {
     {
         margin-bottom: 10px;
     }
-    .start-inner
-    {
-        gap: 0;
-    }
     .start-block
     {
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 40px;
     }
     .start-img,
     .styles-img
@@ -846,6 +843,15 @@ body.language-changing {
     {
         font-size: 40px;
         width: 450px;
+    }
+    .consumers-title
+    {
+        font-size: 35px;
+        width: 500px;
+    }
+    .consumers-text
+    {
+        width: 430px;
     }
     .styles-text
     {
@@ -911,22 +917,13 @@ body.language-changing {
 }
 @media screen and (max-width: 1100px)
 {
-    .blog-inner
+    .start-inner
     {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        width: 100%;
+        gap: 0 10px;
     }
-    .blog-box
+    .start-block
     {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .blog_title
-    {
-        text-align: center;
+        padding: 0px 0px 0px 10px;
     }
     .prices-title
     {
@@ -977,6 +974,15 @@ body.language-changing {
         width: 380px;
         margin-bottom: 32px;
     }
+    .consumers-title
+    {
+        font-size: 30px;
+        width: 400px;
+    }
+    .consumers-text
+    {
+        width: 400px;
+    }
     .contact_img
     {
         position: relative;
@@ -1005,6 +1011,13 @@ body.language-changing {
 }
 @media screen and (max-width: 1000px)
 {
+    .blog-inner
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
     .block-list
     {
         gap: 30px 0;
@@ -1016,16 +1029,6 @@ body.language-changing {
     .consumers-img
     {
         width: 385px;
-    }
-    .consumers-title
-    {
-        font-size: 35px;
-        width: 350px;
-    }
-    .consumers-text
-    {
-        font-size: 14px;
-        width: 408px;
     }
     .start-inner
     {
@@ -1169,10 +1172,6 @@ body.language-changing {
 }
 @media screen and (max-width: 880px)
 {
-    .blog_title
-    {
-        width: 250px;
-    }
     .block-list
     {
         display: grid;
@@ -1290,13 +1289,13 @@ body.language-changing {
     }
     .consumers-title
     {
-        font-size: 30px;
+        font-size: 25px;
         width: 350px;
     }
     .consumers-text
     {
-        font-size: 12px;
-        width: 340px;
+        font-size: 15px;
+        width: 350px;
     }
     .styles-title
     {
@@ -1382,16 +1381,12 @@ body.language-changing {
     .consumers-title
     {
         font-size: 20px;
-        width: 255px;
+        width: 270px;
     }
     .consumers-text
     {
-        font-size: 12px;
-        width: 300px;
-    }
-    .styles-title
-    {
-        width: 350px;
+        font-size: 13px;
+        width: 250px;
     }
     .prices-title
     {
@@ -1419,17 +1414,11 @@ body.language-changing {
     .consumers-title
     {
         font-size: 20px;
-        width: 255px;
+        width: 300px;
     }
     .consumers-text
     {
-        font-size: 12px;
         width: 300px;
-    }
-    .blog-inner
-    {
-        display: flex;
-        flex-direction: column;
     }
     .services-title
     {
@@ -1442,6 +1431,11 @@ body.language-changing {
 }
 @media screen and (max-width: 580px)
 {
+    .blog-inner
+    {
+        display: flex;
+        flex-direction: column;
+    }
     .beautiful-title
     {
         font-size: 30px;
@@ -1454,7 +1448,8 @@ body.language-changing {
         font-size: 30px;
         width: 370px;
     }
-    .team-title
+    .team-title,
+    .blog-title
     {
         width: 370px;
     }
@@ -1508,7 +1503,6 @@ body.language-changing {
     {
         width: 350px;
     }
-    .styles-title,
     .book-title
     {
         width: 300px;
@@ -1602,11 +1596,6 @@ body.language-changing {
     {
         margin-right: 0;
     }
-    .team-title
-    {
-        font-size: 20px;
-        width: 250px;
-    }
     .prices-text,
     .newsletter-text,
     .recommended-text
@@ -1690,7 +1679,10 @@ body.language-changing {
     {
         width: 150px;
     }
-    .styles-title,
+    .styles-title
+    {
+        font-size: 30px;
+    }
     .team-title,
     .blog-title,
     .services-title,
@@ -1701,7 +1693,10 @@ body.language-changing {
     {
         width: 250px;
     }
-    .styles-text,
+    .styles-text
+    {
+        width: 350px;
+    }
     .team-text,
     .blog-text
     {
@@ -1778,7 +1773,8 @@ body.language-changing {
         width: 300px;
         padding: 0;
     }
-    .book-title
+    .book-title,
+    .about-title
     {
         width: 300px;
     }
@@ -1821,12 +1817,19 @@ body.language-changing {
         font-size: 20px;
         width: 270px;
     }
+    .start-title
+    {
+        width: 300px;
+    }
     .follow-title,
-    .about-title,
-    .start-title,
     .services-title
     {
         font-size: 20px;
+        width: 300px;
+    }
+    .styles-title
+    {
+        font-size: 25px;
         width: 300px;
     }
     .newsletter-text,
@@ -1851,17 +1854,7 @@ body.language-changing {
         font-size: 12px;
         padding: 10px 20px;
     }
-    .consumers-img,
-    .blog-category_img
-    {
-        width: 250px;
-    }
-    .consumers-title,
-    .about-title
-    {
-        width: 255px;
-    }
-    .consumers-text
+    .consumers-img
     {
         width: 250px;
     }
@@ -1997,11 +1990,34 @@ body.language-changing {
         font-size: 17px;
         width: 250px;
     }
+    .consumers-title
+    {
+        font-size: 15px;
+        width: 200px;
+    }
+    .consumers-text
+    {
+        width: 250px;
+    }
     .elegance-text,
     .newsletter-text
     {
         font-size: 13px;
         width: 250px;
+    }
+    .styles-title
+    {
+        font-size: 20px;
+        width: 245px;
+    }
+    .styles-text
+    {
+        width: 250px;
+    }
+    .team-title,
+    .blog-title
+    {
+        font-size: 30px;
     }
     .elegance
     {
@@ -2087,11 +2103,35 @@ body.language-changing {
     {
         font-size: 14px;
     }
+    .blog__canendar 
+    {
+        left: 20px;
+        bottom: 20px;
+        padding: 12px 13px;
+    }
+    .start-title
+    {
+        font-size: 23px;
+        width: 200px;
+    }
+    .start-text
+    {
+        width: 250px;
+    }
+    .assessment-title
+    {
+        font-size: 17px;
+    }
+    .assessment-text
+    {
+        font-size: 13px;
+        width: 200px;
+    }
     .newsletter-title,
     .follow-title,
-    .start-title,
     .services-title,
-    .book-title
+    .book-title,
+    .about-title
     {
         width: 250px;
     }
@@ -2114,15 +2154,6 @@ body.language-changing {
     .consumers-img
     {
         width: 230px;
-    }
-    .consumers_text
-    {
-        margin: 0 auto 9px;
-    }
-    .consumers-title,
-    .consumers-text
-    {
-        text-align: center;
     }
     .start-img,
     .styles-img,
