@@ -1229,6 +1229,10 @@ body.language-changing {
         align-items: center;
         justify-content: center;
     }
+    .follow-title
+    {
+        font-size: 35px;
+    }
 }
 @media screen and (max-width: 850px)
 {
@@ -1347,7 +1351,6 @@ body.language-changing {
         width: 400px;
     }
     .elegance-title,
-    .follow-title,
     .team-title
     {
         width: 500px;
@@ -1379,6 +1382,10 @@ body.language-changing {
     {
         font-size: 13px;
         width: 250px;
+    }
+    .follow-title
+    {
+        width: 500px;
     }
 }
 @media screen and (max-width: 680px)
@@ -1427,9 +1434,13 @@ body.language-changing {
         font-size: 30px;
         width: 500px;
     }
-    .elegance-title,
-    .newsletter-title,
     .follow-title
+    {
+        font-size: 25px;
+        width: 400px;
+    }
+    .elegance-title,
+    .newsletter-title
     {
         font-size: 30px;
         width: 370px;
@@ -1681,7 +1692,6 @@ body.language-changing {
     .team-title,
     .blog-title,
     .prices_title,
-    .contact-title,
     .recommended-title
     {
         width: 250px;
@@ -1788,6 +1798,16 @@ body.language-changing {
     {
         width: 300px;
     }
+    .follow-title
+    {
+        font-size: 20px;
+        width: 300px;
+    }
+    .follow-text
+    {
+        font-size: 14px;
+        width: 300px;
+    }
 }
 @media screen and (max-width: 410px)
 {
@@ -1826,18 +1846,12 @@ body.language-changing {
     {
         width: 300px;
     }
-    .follow-title
-    {
-        font-size: 20px;
-        width: 300px;
-    }
     .styles-title
     {
         font-size: 25px;
         width: 300px;
     }
     .newsletter-text,
-    .follow-text,
     .recommended-text
     {
         font-size: 14px;
@@ -2041,6 +2055,15 @@ body.language-changing {
         font-size: 13px;
         width: 250px;
     }
+    .contact-title
+    {
+        font-size: 25px;
+        width: 250px;
+    }
+    .contact-text
+    {
+        width: 250px;
+    }
 }
 @media screen and (max-width: 320px)
 {
@@ -2152,10 +2175,13 @@ body.language-changing {
     {
         width: 250px;
     }
+    .follow-text
+    {
+        width: 250px;
+    }
     .recommended-text,
     .newsletter-text,
-    .book-text,
-    .contact-text
+    .book-text
     {
         width: 200px;
     }
