@@ -945,7 +945,6 @@ body.language-changing {
     .book-title
     {
         font-size: 40px;
-        width: 400px;
     }
     .book-text
     {
@@ -1075,10 +1074,6 @@ body.language-changing {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-    .prices-title
-    {
-        width: 400px;
     }
     .prices_title
     {
@@ -1237,12 +1232,6 @@ body.language-changing {
 }
 @media screen and (max-width: 850px)
 {
-    .title 
-    {
-        font-size: 35px;
-        text-align: center;
-        width: 500px;
-    }
     .beautiful-title,
     .elegance-title,
     .team-title,
@@ -1252,7 +1241,6 @@ body.language-changing {
     }
     .elegance-text,
     .follow-text,
-    .services-text,
     .newsletter-text
     {
         width: 100%;
@@ -1307,11 +1295,6 @@ body.language-changing {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    .prices-text
-    {
-        font-size: 16px;
-        width: 700px;
-    }
 }
 @media screen and (max-width: 750px)
 {
@@ -1324,6 +1307,15 @@ body.language-changing {
         display: flex;
         flex-direction: column;
         gap: 20px 0;
+    }
+    .services-text
+    {
+        width: 650px;
+    }
+    .prices-text
+    {
+        font-size: 16px;
+        width: 600px;
     }
 }
 @media screen and (max-width: 740px)
@@ -1388,16 +1380,6 @@ body.language-changing {
         font-size: 13px;
         width: 250px;
     }
-    .prices-title
-    {
-        font-size: 30px;
-        width: 300px;
-    }
-    .prices-text
-    {
-        font-size: 16px;
-        width: 600px;
-    }
 }
 @media screen and (max-width: 680px)
 {
@@ -1427,6 +1409,10 @@ body.language-changing {
     .prices-text
     {
         width: 500px;
+    }
+    .services-text
+    {
+        width: 550px;
     }
 }
 @media screen and (max-width: 580px)
@@ -1459,8 +1445,7 @@ body.language-changing {
         text-align: center;
     }
     .recommended-text,
-    .follow-text,
-    .services-text
+    .follow-text
     {
         font-size: 16px;
     }
@@ -1486,9 +1471,18 @@ body.language-changing {
     {
         margin-right: 5px;
     }
-    .about-title,
-    .start-title,
     .services-title
+    {
+        font-size: 40px;
+        width: 400px;
+    }
+    .services-text
+    {
+        font-size: 15px;
+        width: 400px;
+    }
+    .about-title,
+    .start-title
     {
         font-size: 30px;
         width: 400px;
@@ -1505,15 +1499,8 @@ body.language-changing {
     }
     .book-title
     {
-        width: 300px;
+        font-size: 30px;
     }
-    .prices-title,
-    .prices_title
-    {
-        font-size: 25px;
-        width: 250px;
-    }
-    .prices-text,
     .newsletter-text,
     .recommended-text,
     .follow-text
@@ -1546,7 +1533,7 @@ body.language-changing {
     }
     .book-btn
     {
-        font-size: 18px;
+        font-size: 16px;
     }
     .follow-list
     {
@@ -1570,6 +1557,10 @@ body.language-changing {
     .beautiful-text
     {
         font-size: 16px;
+        width: 400px;
+    }
+    .prices-text
+    {
         width: 400px;
     }
 }
@@ -1596,7 +1587,6 @@ body.language-changing {
     {
         margin-right: 0;
     }
-    .prices-text,
     .newsletter-text,
     .recommended-text
     {
@@ -1683,10 +1673,13 @@ body.language-changing {
     {
         font-size: 30px;
     }
+    .prices-title
+    {
+        font-size: 30px;
+        width: 300px;
+    }
     .team-title,
     .blog-title,
-    .services-title,
-    .prices-title,
     .prices_title,
     .contact-title,
     .recommended-title
@@ -1705,7 +1698,7 @@ body.language-changing {
     .prices-text,
     .prices_text
     {
-        width: 300px;
+        width: 350px;
     }
     .prices_list
     {
@@ -1773,7 +1766,10 @@ body.language-changing {
         width: 300px;
         padding: 0;
     }
-    .book-title,
+    .book-title
+    {
+        font-size: 25px;
+    }
     .about-title
     {
         width: 300px;
@@ -1782,6 +1778,15 @@ body.language-changing {
     {
         font-size: 14px;
         width: 250px;
+    }
+    .services-title
+    {
+        font-size: 30px;
+        width: 300px;
+    }
+    .services-text
+    {
+        width: 300px;
     }
 }
 @media screen and (max-width: 410px)
@@ -1821,8 +1826,7 @@ body.language-changing {
     {
         width: 300px;
     }
-    .follow-title,
-    .services-title
+    .follow-title
     {
         font-size: 20px;
         width: 300px;
@@ -1834,7 +1838,6 @@ body.language-changing {
     }
     .newsletter-text,
     .follow-text,
-    .services-text,
     .recommended-text
     {
         font-size: 14px;
@@ -1863,17 +1866,6 @@ body.language-changing {
     .team-img
     {
         width: 300px;
-    }
-    .prices-title,
-    .prices_title
-    {
-        width: 192px;
-    }
-    .prices-text,
-    .prices_text
-    {
-        font-size: 13px;
-        width: 250px;
     }
     .prices_list
     {
@@ -1969,6 +1961,18 @@ body.language-changing {
         font-size: 15px;
         width: 300px;
     }
+    .prices-title,
+    .prices_title
+    {
+        font-size: 25px;
+        width: 250px;
+    }
+    .prices-text,
+    .prices_text
+    {
+        font-size: 14px;
+        width: 300px;
+    }
 }
 @media screen and (max-width: 350px)
 {
@@ -2026,6 +2030,16 @@ body.language-changing {
     .elegance_text
     {
         font-size: 25px;
+    }
+    .services-title
+    {
+        font-size: 25px;
+        width: 250px;
+    }
+    .services-text
+    {
+        font-size: 13px;
+        width: 250px;
     }
 }
 @media screen and (max-width: 320px)
@@ -2127,10 +2141,13 @@ body.language-changing {
         font-size: 13px;
         width: 200px;
     }
+    .book-title
+    {
+        font-size: 20px;
+    }
     .newsletter-title,
     .follow-title,
     .services-title,
-    .book-title,
     .about-title
     {
         width: 250px;
@@ -2181,16 +2198,10 @@ body.language-changing {
     {
         gap: 0 10px;
     }
-    .prices_title
-    {
-        text-align: center;
-        margin: 0 auto 12px;
-    }
+    .prices-text,
     .prices_text
     {
-        width: 200px;
-        text-align: center;
-        margin: 0 auto 20px;
+        width: 250px;
     }
     .book-inner
     {
