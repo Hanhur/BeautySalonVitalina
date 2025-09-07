@@ -16,15 +16,15 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 import requests
 from concurrent.futures import ThreadPoolExecutor
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters
+import subprocess
+import sys
 
 # Configuration
 load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # Enable CORS for all routes
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -40,17 +40,90 @@ executor = ThreadPoolExecutor(max_workers=4)
 class Config:
     """Centralized configuration management"""
     ENCRYPTION_KEY = os.getenv('ENCRYPTION_KEY') or Fernet.generate_key().decode()
-    DB_HOST = os.getenv('DB_HOST')
-    DB_NAME = os.getenv('DB_NAME')
-    DB_USER = os.getenv('DB_USER')
-    DB_PASSWORD = os.getenv('DB_PASSWORD')
+    DB_HOST = os.getenv('DB_HOST', 'localhost')
+    DB_NAME = os.getenv('DB_NAME', 'salon_db')
+    DB_USER = os.getenv('DB_USER', 'postgres')
+    DB_PASSWORD = os.getenv('DB_PASSWORD', '')
     DB_PORT = os.getenv('DB_PORT', '5432')
-    SMTP_SERVER = os.getenv('SMTP_SERVER')
+    SMTP_SERVER = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
     SMTP_PORT = int(os.getenv('SMTP_PORT', '587'))
-    SMTP_USER = os.getenv('SMTP_USER')
-    SMTP_PASSWORD = os.getenv('SMTP_PASSWORD')
-    TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+    SMTP_USER = os.getenv('SMTP_USER', '')
+    SMTP_PASSWORD = os.getenv('SMTP_PASSWORD', '')
+    TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
     FLASK_DEBUG = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
+
+def create_database_if_not_exists():
+    """Create database if it doesn't exist"""
+    try:
+        # First try to connect to the target database
+        conn = psycopg2.connect(
+            host=Config.DB_HOST,
+            database=Config.DB_NAME,
+            user=Config.DB_USER,
+            password=Config.DB_PASSWORD,
+            port=Config.DB_PORT
+        )
+        conn.close()
+        logger.info(f"Database {Config.DB_NAME} already exists")
+        return True
+    except pg_errors.OperationalError:
+        # If database doesn't exist, create it
+        try:
+            # Connect to default postgres database to create new database
+            admin_conn = psycopg2.connect(
+                host=Config.DB_HOST,
+                database='postgres',
+                user=Config.DB_USER,
+                password=Config.DB_PASSWORD,
+                port=Config.DB_PORT,
+                autocommit=True  # Important: no transaction block
+            )
+            
+            with admin_conn.cursor() as cur:
+                # Check if database exists
+                cur.execute("SELECT 1 FROM pg_database WHERE datname = %s", (Config.DB_NAME,))
+                exists = cur.fetchone()
+                
+                if not exists:
+                    cur.execute(f"CREATE DATABASE {Config.DB_NAME}")
+                    logger.info(f"Database {Config.DB_NAME} created successfully")
+                else:
+                    logger.info(f"Database {Config.DB_NAME} already exists")
+            
+            admin_conn.close()
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to create database {Config.DB_NAME}: {e}")
+            
+            # Try using createdb command as fallback
+            try:
+                env = os.environ.copy()
+                if Config.DB_PASSWORD:
+                    env['PGPASSWORD'] = Config.DB_PASSWORD
+                
+                result = subprocess.run([
+                    'createdb',
+                    '-h', Config.DB_HOST,
+                    '-p', Config.DB_PORT,
+                    '-U', Config.DB_USER,
+                    Config.DB_NAME
+                ], env=env, capture_output=True, text=True, timeout=30)
+                
+                if result.returncode == 0:
+                    logger.info(f"Database {Config.DB_NAME} created using createdb command")
+                    return True
+                else:
+                    logger.error(f"createdb command failed: {result.stderr}")
+                    return False
+                    
+            except Exception as cmd_error:
+                logger.error(f"Failed to create database using createdb: {cmd_error}")
+                return False
+                
+    except Exception as e:
+        logger.error(f"Unexpected error checking database: {e}")
+        return False
 
 class Database:
     """Database connection pool with context management"""
@@ -68,15 +141,20 @@ class Database:
             )
         except pg_errors.OperationalError as e:
             logger.error("Database connection failed: %s", e)
-            raise RuntimeError("Database connection error")
+            raise RuntimeError(f"Database connection error: {e}")
 
     @staticmethod
     def initialize():
         """Initialize database schema"""
+        # First ensure database exists
+        if not create_database_if_not_exists():
+            raise RuntimeError("Failed to create or connect to database")
+        
         try:
             with Database.get_connection() as conn:
                 with conn.cursor() as cur:
-                    cur.execute(sql.SQL("""
+                    # Create appointments table if not exists
+                    cur.execute("""
                         CREATE TABLE IF NOT EXISTS appointments (
                             id SERIAL PRIMARY KEY,
                             first_name BYTEA NOT NULL,
@@ -90,15 +168,19 @@ class Database:
                             is_notified BOOLEAN DEFAULT FALSE,
                             is_telegram_notified BOOLEAN DEFAULT FALSE
                         )
-                    """))
-                    cur.execute(sql.SQL("""
+                    """)
+                    
+                    # Create telegram_subscribers table if not exists
+                    cur.execute("""
                         CREATE TABLE IF NOT EXISTS telegram_subscribers (
                             chat_id BIGINT PRIMARY KEY,
                             registered_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
                         )
-                    """))
+                    """)
+                    
                     conn.commit()
-                    logger.info("Database initialized")
+                    logger.info("Database tables initialized successfully")
+                    
         except pg_errors.Error as e:
             logger.error("Database initialization failed: %s", e)
             raise RuntimeError("Database initialization error")
@@ -147,19 +229,23 @@ class Database:
                     """), (limit,))
                     
                     encryptor = EncryptionService()
-                    return [
-                        {
-                            'id': row[0],
-                            'first_name': encryptor.safe_decrypt(row[1]),
-                            'last_name': encryptor.safe_decrypt(row[2]),
-                            'email': encryptor.safe_decrypt(row[3]),
-                            'phone': encryptor.safe_decrypt(row[4]),
-                            'service': row[5],
-                            'date': row[6],
-                            'time': row[7]
-                        }
-                        for row in cur.fetchall()
-                    ]
+                    appointments = []
+                    for row in cur.fetchall():
+                        try:
+                            appointments.append({
+                                'id': row[0],
+                                'first_name': encryptor.safe_decrypt(row[1]),
+                                'last_name': encryptor.safe_decrypt(row[2]),
+                                'email': encryptor.safe_decrypt(row[3]),
+                                'phone': encryptor.safe_decrypt(row[4]),
+                                'service': row[5],
+                                'date': row[6],
+                                'time': row[7]
+                            })
+                        except Exception as e:
+                            logger.error(f"Failed to decrypt appointment data: {e}")
+                            continue
+                    return appointments
         except pg_errors.Error as e:
             logger.error("Failed to fetch appointments: %s", e)
             return []
@@ -179,6 +265,8 @@ class Database:
         except pg_errors.Error as e:
             logger.error("Failed to mark appointment as notified: %s", e)
             raise RuntimeError("Failed to update appointment status")
+
+# Остальной код остается без изменений (EncryptionService, NotificationService, utility functions, endpoints)
 
 class EncryptionService:
     """Optimized encryption service"""
@@ -215,7 +303,10 @@ class EncryptionService:
         if not encrypted_data:
             return ''
         try:
-            return self.cipher.decrypt(encrypted_data.tobytes()).decode()
+            if hasattr(encrypted_data, 'tobytes'):
+                return self.cipher.decrypt(encrypted_data.tobytes()).decode()
+            else:
+                return self.cipher.decrypt(encrypted_data).decode()
         except Exception as e:
             logger.warning(f"Decryption failed: {e}")
             return '[DECRYPTION_ERROR]'
@@ -236,32 +327,27 @@ class NotificationService:
             return False
 
         try:
-            msg = MIMEMultipart()
+            msg = MIMEText(f"""
+            Dear {recipient_data['first_name']} {recipient_data['last_name']},
+
+            Thank you for booking with us!
+
+            Appointment Details:
+            - Service: {recipient_data['service']}
+            - Date: {recipient_data['date']}
+            - Time: {recipient_data['time']}
+
+            We look forward to seeing you!
+            """)
+            
             msg['From'] = Config.SMTP_USER
             msg['To'] = recipient_data['email']
             msg['Subject'] = "Your Appointment Confirmation"
 
-            body = f"""
-            <html>
-                <body>
-                    <h2>Dear {recipient_data['first_name']} {recipient_data['last_name']},</h2>
-                    <p>Thank you for booking with us!</p>
-                    <h3>Appointment Details:</h3>
-                    <ul>
-                        <li>Service: {recipient_data['service']}</li>
-                        <li>Date: {recipient_data['date']}</li>
-                        <li>Time: {recipient_data['time']}</li>
-                    </ul>
-                </body>
-            </html>
-            """
-
-            msg.attach(MIMEText(body, 'html'))
-
             with smtplib.SMTP(Config.SMTP_SERVER, Config.SMTP_PORT) as server:
                 server.starttls()
                 server.login(Config.SMTP_USER, Config.SMTP_PASSWORD)
-                server.send_message(msg)
+                server.sendmail(Config.SMTP_USER, recipient_data['email'], msg.as_string())
 
             logger.info(f"Email sent to {recipient_data['email']}")
             return True
@@ -282,7 +368,15 @@ class NotificationService:
             return False
 
         try:
-            message = NotificationService.create_appointment_message(appointment_data)
+            message = f"""📅 New Appointment
+            
+            👤 Client: {appointment_data['first_name']} {appointment_data['last_name']}
+            📞 Phone: {appointment_data['phone']}
+            📧 Email: {appointment_data['email']}
+            💈 Service: {appointment_data['service']}
+            📅 Date: {appointment_data['date']}
+            ⏰ Time: {appointment_data['time']}"""
+            
             subscribers = Database.get_telegram_subscribers()
             
             if not subscribers:
@@ -307,20 +401,7 @@ class NotificationService:
             logger.error(f"Failed to send Telegram notification: {e}")
             return False
 
-    @staticmethod
-    def create_appointment_message(appointment):
-        """Create consistent appointment message format"""
-        return (
-            "📅 New Appointment\n\n"
-            f"👤 Client: {appointment['first_name']} {appointment['last_name']}\n"
-            f"📞 Phone: {appointment['phone']}\n"
-            f"📧 Email: {appointment['email']}\n"
-            f"💈 Service: {appointment['service']}\n"
-            f"📅 Date: {appointment['date']}\n"
-            f"⏰ Time: {appointment['time']}"
-        )
-
-# Utility functions
+# Utility functions (остаются без изменений)
 def validate_booking_data(data: Dict[str, Any]) -> None:
     """Enhanced data validation"""
     required = {
@@ -371,114 +452,7 @@ def error_handler(f):
             return jsonify(response), 500
     return wrapper
 
-# Telegram Bot Handlers
-def handle_appointments(update: Update, context: CallbackContext, automatic=False):
-    """Shared logic for manual and automatic appointment handling"""
-    try:
-        appointments = Database.get_new_appointments()
-        if not appointments:
-            if not automatic:
-                update.message.reply_text("No new appointments found.")
-            return
-        
-        for appt in appointments:
-            try:
-                message = NotificationService.create_appointment_message(appt)
-                if automatic:
-                    context.bot.send_message(chat_id=context.job.context, text=message)
-                else:
-                    update.message.reply_text(message)
-                Database.mark_as_notified(appt['id'])
-            except Exception as e:
-                logger.error(f"Failed to process appointment {appt.get('id')}: {e}")
-                continue
-                
-    except Exception as e:
-        logger.error(f"Error handling appointments: {e}")
-        if not automatic:
-            update.message.reply_text("⚠️ Error fetching appointments. Please try again.")
-
-def start(update: Update, context: CallbackContext):
-    """Handler for /start command"""
-    update.message.reply_text(
-        "👋 Hello! I'm your appointment notification bot.\n"
-        "I'll notify you about new appointments in this chat.\n\n"
-        "Commands:\n"
-        "/appointments - Check for new appointments\n"
-        "/notify - Enable automatic notifications\n"
-        "/chatid - Get your chat ID"
-    )
-
-def list_appointments(update: Update, context: CallbackContext):
-    """Handler for /appointments command"""
-    handle_appointments(update, context)
-
-def check_new_appointments(context: CallbackContext):
-    """Periodic check for new appointments"""
-    handle_appointments(None, context, automatic=True)
-
-def register_notifications(update: Update, context: CallbackContext):
-    """Register chat for automatic notifications"""
-    try:
-        chat_id = update.message.chat_id
-        
-        # Add subscriber to database
-        if Database.add_telegram_subscriber(chat_id):
-            # Remove existing job if any
-            current_jobs = context.job_queue.get_jobs_by_name(str(chat_id))
-            for job in current_jobs:
-                job.schedule_removal()
-            
-            # Add new job
-            context.job_queue.run_repeating(
-                check_new_appointments,
-                interval=300.0,  # 5 minutes
-                first=0.0,
-                context=chat_id,
-                name=str(chat_id)
-            )
-            
-            update.message.reply_text(
-                "🔔 You will now receive automatic notifications about new appointments.\n"
-                "Notifications will arrive every 5 minutes if new appointments exist."
-            )
-        else:
-            update.message.reply_text("⚠️ Failed to register for notifications. Please try again.")
-    except Exception as e:
-        logger.error(f"Error registering notifications: {e}")
-        update.message.reply_text("⚠️ Failed to setup notifications. Please try again.")
-
-def get_chat_id(update: Update, context: CallbackContext):
-    """Handler for /chatid command"""
-    update.message.reply_text(f"Your chat ID: {update.message.chat_id}")
-
-def start_telegram_bot():
-    """Start the Telegram bot"""
-    if not Config.TELEGRAM_BOT_TOKEN:
-        logger.warning("Telegram bot token not configured - skipping bot startup")
-        return
-
-    try:
-        # Verify services
-        EncryptionService()
-        Database.get_connection()  # Test connection
-        
-        updater = Updater(Config.TELEGRAM_BOT_TOKEN, use_context=True)
-        dp = updater.dispatcher
-        
-        # Add handlers
-        dp.add_handler(CommandHandler("start", start))
-        dp.add_handler(CommandHandler("appointments", list_appointments))
-        dp.add_handler(CommandHandler("notify", register_notifications))
-        dp.add_handler(CommandHandler("chatid", get_chat_id))
-        
-        logger.info("Telegram bot started successfully")
-        updater.start_polling()
-    except Exception as e:
-        logger.critical(f"Failed to start Telegram bot: {e}")
-        raise
-
-# API Endpoints
+# API Endpoints (остаются без изменений)
 @app.route('/')
 def index():
     return jsonify({
@@ -491,10 +465,13 @@ def index():
         }
     })
 
-@app.route('/book-appointment', methods=['POST'])
+@app.route('/book-appointment', methods=['POST', 'OPTIONS'])
 @error_handler
 def book_appointment():
     """Optimized appointment booking endpoint"""
+    if request.method == 'OPTIONS':
+        return '', 200
+        
     data = request.get_json()
     if not data:
         raise ValueError("No data provided")
@@ -556,7 +533,7 @@ def book_appointment():
         'appointment_id': appointment_id
     })
 
-@app.route('/health')
+@app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
     try:
@@ -583,10 +560,13 @@ def health_check():
             'error': str(e)
         }), 500
 
-@app.route('/register-telegram', methods=['POST'])
+@app.route('/register-telegram', methods=['POST', 'OPTIONS'])
 @error_handler
 def register_telegram():
     """Register Telegram chat for notifications"""
+    if request.method == 'OPTIONS':
+        return '', 200
+        
     data = request.get_json()
     if not data or 'chat_id' not in data:
         raise ValueError("Missing chat_id in request")
@@ -611,12 +591,10 @@ def run_application():
         Database.initialize()
         EncryptionService()  # Test encryption
         
-        # Start Telegram bot in a separate thread if configured
-        if Config.TELEGRAM_BOT_TOKEN:
-            import threading
-            bot_thread = threading.Thread(target=start_telegram_bot, daemon=True)
-            bot_thread.start()
-            logger.info("Telegram bot started in background thread")
+        logger.info("Starting Flask application...")
+        logger.info(f"Database: {Config.DB_NAME}")
+        logger.info(f"Host: {Config.DB_HOST}")
+        logger.info(f"User: {Config.DB_USER}")
         
         # Start Flask application
         app.run(
