@@ -662,7 +662,7 @@ body {
     width: 190px;
 }
 .footer-block_list {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--WhiteColor);
     display: flex;
@@ -670,7 +670,7 @@ body {
     gap: 14px 0;
 }
 .footer-address_list {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--WhiteColor);
     display: flex;
@@ -680,6 +680,21 @@ body {
 .footer-address_item {
     display: flex;
     gap: 0 14px;
+}
+.logo-img
+{
+    border-radius: 50%;
+}
+.footer__address
+{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer_address
+{
+    display: flex;
+    gap: 14px;
 }
 /* ================================================================================= */
 /* Плавные переходы при смене языка */
